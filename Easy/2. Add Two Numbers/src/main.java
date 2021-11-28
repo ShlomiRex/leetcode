@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.List;
 
 public class main {
@@ -23,42 +24,44 @@ public class main {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode res = new ListNode();
 
-        long sum1 = 0;
-        long sum2 = 0;
-        long multiplier = 1;
+        BigInteger sum1 = new BigInteger("0");
+        BigInteger sum2 = new BigInteger("0");
+        BigInteger multiplier = new BigInteger("1");
 
         // don't change reference of parameters
         ListNode _l1 = l1;
         ListNode _l2 = l2;
 
         while(_l1 != null) {
-            sum1 += (multiplier * (_l1.val));
+            sum1 = sum1.add(multiplier.multiply(BigInteger.valueOf(_l1.val)));
             _l1 = _l1.next;
-            multiplier *= 10;
+            multiplier = multiplier.multiply(BigInteger.valueOf(10));
         }
 
-        multiplier = 1;
+        multiplier = BigInteger.valueOf(1);
         while(_l2 != null) {
-            sum2 += (multiplier * (_l2.val));
+            sum2 = sum2.add(multiplier.multiply(BigInteger.valueOf(_l2.val)));
             _l2 = _l2.next;
-            multiplier *= 10;
+            multiplier = multiplier.multiply(BigInteger.valueOf(10));
         }
 
         System.out.println(sum1);
         System.out.println(sum2);
 
-        long res_sum = sum1 + sum2;
+        BigInteger res_sum = sum1.add(sum2);
         ListNode res_pointer = res;
 
-        while(res_sum > 9) {
-            res_pointer.val = (int)(res_sum % 10);
+
+        while(res_sum.compareTo(BigInteger.valueOf(9)) > 0) {
+            res_pointer.val = res_sum.mod(BigInteger.valueOf(10)).intValue();
             res_pointer.next = new ListNode();
             res_pointer = res_pointer.next;
 
-            res_sum /= 10;
+
+            res_sum = res_sum.divide(BigInteger.valueOf(10));
         }
 
-        res_pointer.val = (int)(res_sum % 10);
+        res_pointer.val = res_sum.mod(BigInteger.valueOf(10)).intValue();
 
         return res;
     }
