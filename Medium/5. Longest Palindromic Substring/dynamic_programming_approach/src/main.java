@@ -61,22 +61,22 @@ public class main {
         }
 
         //Print matrix
-        System.out.println("\nString: '" + s + "'");
-        for(int col = 0; col < cols; col++) {
-            System.out.print("\t" + s.charAt(col) + "\t");
-        }
-        System.out.println();
-        for(int col = 0; col < cols; col++) {
-            System.out.print("\t" + col + "\t");
-        }
-        System.out.println();
-        for(int row = 0; row < rows; row++) {
-            System.out.print(s.charAt(row) + " " + row + "\t");
-            for(int col = 0; col < cols; col++) {
-                System.out.print(matrix[row][col] + "\t");
-            }
-            System.out.println();
-        }
+//        System.out.println("\nString: '" + s + "'");
+//        for(int col = 0; col < cols; col++) {
+//            System.out.print("\t" + s.charAt(col) + "\t");
+//        }
+//        System.out.println();
+//        for(int col = 0; col < cols; col++) {
+//            System.out.print("\t" + col + "\t");
+//        }
+//        System.out.println();
+//        for(int row = 0; row < rows; row++) {
+//            System.out.print(s.charAt(row) + " " + row + "\t");
+//            for(int col = 0; col < cols; col++) {
+//                System.out.print(matrix[row][col] + "\t");
+//            }
+//            System.out.println();
+//        }
 
         //Check the top-right corner of the matrix for palindrome
         if(matrix[0][cols-1]) {
@@ -84,10 +84,11 @@ public class main {
         }
 
         //Find the longest palindrome (we could do it in previous loop but this code is not optimized for readability)
+        int col;
         for(int diag_num = s.length() - 2; diag_num >= 0; diag_num--) {
-            int col = diag_num;
-            for(int row = 0; row < rows -1; row++) {
-                boolean is_palindrome = matrix[row][diag_num];
+            col = diag_num;
+            for(int row = 0; row < rows -diag_num; row++) {
+                boolean is_palindrome = matrix[row][col];
                 if(is_palindrome) {
                     //We found the longest, first, palindrome.
 
@@ -105,13 +106,20 @@ public class main {
     }
 
     public static void main(String[] args) {
-        assert("aba".equals(longestPalindrome("babad")));
+        assert("bab".equals(longestPalindrome("babad")));
         assert("bb".equals(longestPalindrome("cbbd")));
         assert("a".equals(longestPalindrome("a")));
         assert("a".equals(longestPalindrome("ac")));
         assert("ccc".equals(longestPalindrome("ccc")));
-        assert("aba".equals(longestPalindrome("babad")));
+        assert("bab".equals(longestPalindrome("babad")));
         assert("cc".equals(longestPalindrome("ccd")));
         assert("cc".equals(longestPalindrome("dcc")));
+
+        String s = "zudfweormatjycujjirzjpyrmaxurectxrtqedmmgergwdvjmjtstdhcihacqnothgttgqfywcpgnuvwglvfiuxteopoyizgehkwuvvkqxbnufkcbodlhdmbqyghkojrgokpwdhtdrwmvdegwycecrgjvuexlguayzcammupgeskrvpthrmwqaqsdcgycdupykppiyhwzwcplivjnnvwhqkkxildtyjltklcokcrgqnnwzzeuqioyahqpuskkpbxhvzvqyhlegmoviogzwuiqahiouhnecjwysmtarjjdjqdrkljawzasriouuiqkcwwqsxifbndjmyprdozhwaoibpqrthpcjphgsfbeqrqqoqiqqdicvybzxhklehzzapbvcyleljawowluqgxxwlrymzojshlwkmzwpixgfjljkmwdtjeabgyrpbqyyykmoaqdambpkyyvukalbrzoyoufjqeftniddsfqnilxlplselqatdgjziphvrbokofvuerpsvqmzakbyzxtxvyanvjpfyvyiivqusfrsufjanmfibgrkwtiuoykiavpbqeyfsuteuxxjiyxvlvgmehycdvxdorpepmsinvmyzeqeiikajopqedyopirmhymozernxzaueljjrhcsofwyddkpnvcvzixdjknikyhzmstvbducjcoyoeoaqruuewclzqqqxzpgykrkygxnmlsrjudoaejxkipkgmcoqtxhelvsizgdwdyjwuumazxfstoaxeqqxoqezakdqjwpkrbldpcbbxexquqrznavcrprnydufsidakvrpuzgfisdxreldbqfizngtrilnbqboxwmwienlkmmiuifrvytukcqcpeqdwwucymgvyrektsnfijdcdoawbcwkkjkqwzffnuqituihjaklvthulmcjrhqcyzvekzqlxgddjoir";
+
+        String res = longestPalindrome(s);
+
+        System.out.println("Longest palindrome: " + res);
+        System.out.println("Length: " + res.length());
     }
 }
