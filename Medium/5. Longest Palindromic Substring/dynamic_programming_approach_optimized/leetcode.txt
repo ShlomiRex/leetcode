@@ -1,0 +1,2 @@
+Runtime: 361 ms, faster than 18.71% of Java online submissions for Longest Palindromic Substring.
+Memory Usage: 42.6 MB, less than 35.39% of Java online submissions for Longest Palindromic Substring.
