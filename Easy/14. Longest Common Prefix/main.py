@@ -11,14 +11,20 @@ def longestCommonPrefix(strs: List[str]) -> str:
 
     longest_common_prefix = ""
 
+
+	# Check at each str at index 'index' if the char is common to every other string.
+	# If it is, increment index, and append the common char to the longest_common_prefix.
+	# Else, we are done.
     index = 0
     while True:
         if index >= len(strs[0]):
             break
 
+		# Take example char to be checked at every other string.
         common_char = strs[0][index]
         is_common_to_all = True
 
+		# Check if all strings have this common prefix at index 'index'.
         for str in strs:
             if index < len(str):
                 if str[index] != common_char:
@@ -27,9 +33,11 @@ def longestCommonPrefix(strs: List[str]) -> str:
             else:
                 return longest_common_prefix
 
+		# All strings have common prefix at index 'index'. Add it to the longest_common_prefix.
         if is_common_to_all:
             longest_common_prefix += common_char
         else:
+			# No common prefix at index 'index'. We are done.
             break
 
         index = index + 1
