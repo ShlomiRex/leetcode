@@ -81,24 +81,26 @@ def minimumDeviation(nums: List[int]) -> int:
         # Decrease maximum
         if max_elem % 2 == 0:
             changed_max = int(max_elem / 2)
-            # If we divide, we can't set the max if it's less than the minimum. We can't have deviation of negative!
-            if changed_max > min_elem:
-                # Check that this operation decreased deviation
-                new_deviation = changed_max - min_elem
-                if new_deviation < deviation:
-                    decreased_max = True
-                    min_elem, max_elem, deviation = decrease_max(nums, changed_max)
+
+            abs_max = max(min_elem, changed_max)
+            abs_min = min(min_elem, changed_max)
+            new_deviation = abs_max - abs_min
+
+            if new_deviation < deviation:
+                decreased_max = True
+                min_elem, max_elem, deviation = decrease_max(nums, changed_max)
 
         # Increase minimum
         if min_elem % 2 == 1:
             changed_min = int(min_elem) * 2
-            # If we multiply, we can't set the min if it's more than the maximum. We can't have deviation of negative!
-            if changed_min < max_elem:
-                # Check that this operation decreased deviation
-                new_deviation = max_elem - changed_min
-                if new_deviation < deviation:
-                    increased_min = True
-                    min_elem, max_elem, deviation = increase_min(nums, changed_min)
+
+            abs_max = max(max_elem, changed_min)
+            abs_min = min(max_elem, changed_min)
+            new_deviation = abs_max - abs_min
+
+            if new_deviation < deviation:
+                increased_min = True
+                min_elem, max_elem, deviation = increase_min(nums, changed_min)
         # Check if we didn't change max AND min, which means, we are done.
         if not decreased_max and not increased_min:
             break
@@ -107,32 +109,32 @@ def minimumDeviation(nums: List[int]) -> int:
 
 
 if __name__ == "__main__":
-    # nums = [4, 4, 1, 2, 2, 2, 3, 4, 4, 4]
-    # res = minimumDeviation(nums)
-    # print(res)
-    # assert res == 1
-    #
-    # nums = [1, 2, 3, 4]
-    # res = minimumDeviation(nums)
-    # print(res)
-    # assert res == 1
-    #
-    # nums = [4, 1, 5, 20, 3]
-    # res = minimumDeviation(nums)
-    # print(res)
-    # assert res == 3
-    #
-    # nums = [2, 10, 8]
-    # res = minimumDeviation(nums)
-    # print(res)
-    # assert res == 3
+    nums = [4, 4, 1, 2, 2, 2, 3, 4, 4, 4]
+    res = minimumDeviation(nums)
+    print(res)
+    assert res == 1
+
+    nums = [1, 2, 3, 4]
+    res = minimumDeviation(nums)
+    print(res)
+    assert res == 1
+
+    nums = [4, 1, 5, 20, 3]
+    res = minimumDeviation(nums)
+    print(res)
+    assert res == 3
+
+    nums = [2, 10, 8]
+    res = minimumDeviation(nums)
+    print(res)
+    assert res == 3
 
     nums = [3, 5]
     res = minimumDeviation(nums)
     print(res)
     assert res == 1
-    #
-    # nums = [5, 8]
-    # res = minimumDeviation(nums)
-    # print(res)
-    # assert res == 1
+
+    nums = [5, 8]
+    res = minimumDeviation(nums)
+    print(res)
+    assert res == 1
