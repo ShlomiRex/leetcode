@@ -23,21 +23,40 @@ def searchInsert(nums: List[int], target: int) -> int:
 
 
 def increase_min(nums: List[int], new_min: int):
-    # Replace the old min
+    return increase_min_OR_decrease_max(nums, new_min, is_decrease_max=False)
 
-    # Pop the old min
-    nums.pop(0)
 
-    # Insert the changed maximum element to the sorted array
-    insertion_index = searchInsert(nums, new_min)
-    nums.insert(insertion_index, new_min)
+def decrease_max(nums: List[int], new_max: int):
+    return increase_min_OR_decrease_max(nums, new_max, is_decrease_max=True)
 
-    # Update min, max, deviation
+
+def increase_min_OR_decrease_max(nums: List[int], new_val: int, is_decrease_max: bool) -> (int, int, int):
+    """
+    :param nums:
+    :param new_max:
+    :return:
+    """
+    if is_decrease_max:
+        print(f"Decreased max from {nums[-1]} to {new_val}")
+        # Pop the old max
+        nums.pop(-1)
+    else:
+        print(f"Increased min from {nums[0]} to {new_val}")
+        # Pop the old min
+        nums.pop(0)
+
+    # Insert the changed element to the sorted array
+    insertion_index = searchInsert(nums, new_val)
+    nums.insert(insertion_index, new_val)
+
+    # Return deviation
     min_elem = nums[0]
     max_elem = nums[-1]
     deviation = max_elem - min_elem
 
     print(f"Nums = {nums}, Deviation = {deviation}")
+
+    return min_elem, max_elem, deviation
 
 
 def minimumDeviation(nums: List[int]) -> int:
@@ -45,6 +64,7 @@ def minimumDeviation(nums: List[int]) -> int:
     nums = list(set(nums))
     # We don't care about indexes, so we can sort. This helps with finding minimum, maximum.
     nums = sorted(nums)
+    print(nums)
 
     min_elem = nums[0]
     max_elem = nums[-1]
@@ -66,27 +86,9 @@ def minimumDeviation(nums: List[int]) -> int:
                 # Check that this operation decreased deviation
                 new_deviation = changed_max - min_elem
                 if new_deviation < deviation:
-                    print(f"Decreased max from {max_elem} to {changed_max}")
                     decreased_max = True
-                    # Replace the old max
+                    min_elem, max_elem, deviation = decrease_max(nums, changed_max)
 
-                    # Pop the old max
-                    nums.pop(-1)
-
-                    # Insert the changed maximum element to the sorted array
-                    insertion_index = searchInsert(nums, changed_max)
-                    nums.insert(insertion_index, changed_max)
-                    # continue # TODO: Maybe not comment?
-
-                    # Update min, max, deviation
-                    min_elem = nums[0]
-                    max_elem = nums[-1]
-                    deviation = max_elem - min_elem
-
-                    print(f"Nums = {nums}, Deviation = {deviation}")
-                else:
-                    # We didn't decrease deviation. We still need to check if we can manipulate min elem.
-                    pass
         # Increase minimum
         if min_elem % 2 == 1:
             changed_min = int(min_elem) * 2
@@ -95,34 +97,8 @@ def minimumDeviation(nums: List[int]) -> int:
                 # Check that this operation decreased deviation
                 new_deviation = max_elem - changed_min
                 if new_deviation < deviation:
-                    print(f"Increased min from {min_elem} to {changed_min}")
                     increased_min = True
-                    # Replace the old min
-
-                    # Pop the old min
-                    nums.pop(0)
-
-                    # Insert the changed maximum element to the sorted array
-                    insertion_index = searchInsert(nums, changed_min)
-                    nums.insert(insertion_index, changed_min)
-                    # continue # TODO: Maybe not comment?
-
-                    # Update min, max, deviation
-                    min_elem = nums[0]
-                    max_elem = nums[-1]
-                    deviation = max_elem - min_elem
-
-                    print(f"Nums = {nums}, Deviation = {deviation}")
-            else:
-                # We changed min to be max.
-
-                # Check that this operation decreased deviation
-                curr_max_elem = max(max_elem, changed_min)
-                curr_min_elem = min(max_elem, changed_min)
-
-                new_deviation = curr_max_elem - curr_min_elem
-                if new_deviation < deviation:
-                    pass
+                    min_elem, max_elem, deviation = increase_min(nums, changed_min)
         # Check if we didn't change max AND min, which means, we are done.
         if not decreased_max and not increased_min:
             break
@@ -155,8 +131,8 @@ if __name__ == "__main__":
     res = minimumDeviation(nums)
     print(res)
     assert res == 1
-
-    nums = [5, 8]
-    res = minimumDeviation(nums)
-    print(res)
-    assert res == 1
+    #
+    # nums = [5, 8]
+    # res = minimumDeviation(nums)
+    # print(res)
+    # assert res == 1
