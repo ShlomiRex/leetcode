@@ -1,6 +1,3 @@
-from typing import List, Optional
-
-
 def searchInsert(nums: List[int], target: int) -> int:
     """
     Binary search through sorted array nums the target.
@@ -20,7 +17,6 @@ def searchInsert(nums: List[int], target: int) -> int:
         else:
             start_i = mid + 1
     return start_i
-
 
 def increase_min_OR_decrease_max(nums: List[int], new_val: int, is_decrease_max: bool):
     """
@@ -49,86 +45,49 @@ def increase_min_OR_decrease_max(nums: List[int], new_val: int, is_decrease_max:
     print(f"Nums = {nums}, Deviation = {deviation}, Min = {min_elem}, Max = {max_elem}")
 
 
-def minimumDeviation(nums: List[int]) -> int:
-    nums = sorted(list(set(nums)))
-    print(nums)
-    min_elem, max_elem = nums[0], nums[-1]
+class Solution:
+    def minimumDeviation(self, nums: List[int]) -> int:
+        nums = sorted(list(set(nums)))
+        min_elem, max_elem = nums[0], nums[-1]
 
-    # The goal: Minimize deviation.
-    deviation = max_elem - min_elem
+        # The goal: Minimize deviation.
+        deviation = max_elem - min_elem
 
-    while True:
-        # Only if we couldn't increase max AND decrease min, then the program reached the goal of minimized deviation
-        decreased_max = False
-        increased_min = False
+        while True:
+            # Only if we couldn't increase max AND decrease min, then the program reached the goal of minimized deviation
+            decreased_max = False
+            increased_min = False
 
-        # Decrease maximum
-        if max_elem % 2 == 0:
-            changed_max = int(max_elem / 2)
+            # Decrease maximum
+            if max_elem % 2 == 0:
+                changed_max = int(max_elem / 2)
 
-            abs_max = max(nums[-2], changed_max)
-            abs_min = min(min_elem, changed_max)
-            new_deviation = abs_max - abs_min
+                abs_max = max(nums[-2], changed_max)
+                abs_min = min(min_elem, changed_max)
+                new_deviation = abs_max - abs_min
 
-            if new_deviation < deviation:
-                decreased_max = True
-                increase_min_OR_decrease_max(nums, changed_max, is_decrease_max=True)
-                min_elem, max_elem = nums[0], nums[-1]
-                deviation = max_elem - min_elem
+                if new_deviation < deviation:
+                    decreased_max = True
+                    increase_min_OR_decrease_max(nums, changed_max, is_decrease_max=True)
+                    min_elem, max_elem = nums[0], nums[-1]
+                    deviation = max_elem - min_elem
+                    continue
 
-        # Increase minimum
-        if min_elem % 2 == 1:
-            changed_min = int(min_elem) * 2
+            # Increase minimum
+            if min_elem % 2 == 1:
+                changed_min = int(min_elem) * 2
 
-            abs_max = max(max_elem, changed_min)
-            abs_min = min(nums[1], changed_min)
-            new_deviation = abs_max - abs_min
+                abs_max = max(max_elem, changed_min)
+                abs_min = min(nums[1], changed_min)
+                new_deviation = abs_max - abs_min
 
-            if new_deviation < deviation:
-                increased_min = True
-                increase_min_OR_decrease_max(nums, changed_min, is_decrease_max=False)
-                min_elem, max_elem = nums[0], nums[-1]
-                deviation = max_elem - min_elem
-        # Check if we didn't change max AND min, which means, we are done.
-        if not decreased_max and not increased_min:
-            break
+                if new_deviation < deviation:
+                    increased_min = True
+                    increase_min_OR_decrease_max(nums, changed_min, is_decrease_max=False)
+                    min_elem, max_elem = nums[0], nums[-1]
+                    deviation = max_elem - min_elem
+            # Check if we didn't change max AND min, which means, we are done.
+            if not decreased_max and not increased_min:
+                break
 
-    return deviation
-
-
-if __name__ == "__main__":
-    nums = [4, 4, 1, 2, 2, 2, 3, 4, 4, 4]
-    res = minimumDeviation(nums)
-    print(res)
-    assert res == 1
-
-    nums = [1, 2, 3, 4]
-    res = minimumDeviation(nums)
-    print(res)
-    assert res == 1
-
-    nums = [2, 10, 8]
-    res = minimumDeviation(nums)
-    print(res)
-    assert res == 3
-
-    nums = [4, 1, 5, 20, 3]
-    res = minimumDeviation(nums)
-    print(res)
-    assert res == 3
-
-    nums = [3, 5]
-    res = minimumDeviation(nums)
-    print(res)
-    assert res == 1
-
-    nums = [5, 8]
-    res = minimumDeviation(nums)
-    print(res)
-    assert res == 1
-
-    nums = [5, 8, 20]
-    res = minimumDeviation(nums)
-    print(res)
-    assert res == 1
-
+        return deviation
