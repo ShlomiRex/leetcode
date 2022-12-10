@@ -1,0 +1,5 @@
+If we put all the nums array into hashmap, where the key is the number and value is the index in nums array
+And enumerate over the array
+We ask 'target - nums[i]' in hashmap, if so then the hashmap[target-nums[i]] is the second index
+
+And we return the i index and second index
