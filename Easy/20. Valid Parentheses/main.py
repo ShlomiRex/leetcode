@@ -27,7 +27,7 @@ def isValid(s: str) -> bool:
 
 if __name__ == "__main__":
 	assert isValid("()") == True
-	assert isValid(r'()[]{}') == True
+	assert isValid("()[]{}") == True
 	assert isValid("(]") == False
 	assert isValid("([)]") == False
 	assert isValid("{[]}") == True
