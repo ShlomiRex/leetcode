@@ -1,0 +1,11 @@
+We use two pointers.
+One pointer 'i' points to the first number that is equal to 'val'.
+The second pointer 'j' increments until it finds a number that is not equal to 'val'.
+Then we swap the two numbers, and increment both pointers.
+
+The return value is amount of numbers that are not equal to 'val'. i.e. the pointer 'i' which is the beginning of the 'val' numbers.
+
+We also in the process shift the array, such that all 'val' numbers are at the end of the array.
+
+Time complexity: O(n)
+Memory complexity: O(1)
