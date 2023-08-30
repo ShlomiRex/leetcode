@@ -1,0 +1,19 @@
+Important: the subsequence list doesn't have to be sequantial.
+i.e., input: [10,9,2,5,3,7,101,18]
+longest:           ^   ^ ^  ^
+longest subsequence list: [2, 3, 7, 101]
+We skipped '5'.
+
+To solve this problem we can think that for each element, we need to count the longest subsequence.
+i.e. longest from 10, longest from 9, longest from 2, and so on.
+
+This is the perfect oppertunity to use dynamic programming, where we use previous calculations.
+
+We define the dynamic programming problem as follows:
+dp[i] = longest strickly increasing subsequence of nums[0...i]
+Then we simply return the maximum dp[i].
+Notice we need dp[i] to be '1' at the start, since we talking about length, and it can be minimum 1.
+
+The 'i' index is greater than 'j' index. We check 'nums[j] < nums[i]' for increasing sequence.
+If it is increasing sequence, we need to check if we need to update 'dp[i]', i.e., the LIS is greater than in 'dp[i]' currently.
+That means the current sequence is the longest, and so we update 'dp[i] = dp[j] +1'.
