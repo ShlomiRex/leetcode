@@ -1,0 +1,34 @@
+We start from the basic problem.
+
+We start from the leaf.
+
+The maxPathSum of a leaf is its value.
+
+Then what is the maxPathSum of the parent? Lets say 1 is parent of left node: 2 and right node: 3.
+
+The possible paths are: 1->2 or 1->3 or 2->1->3.
+
+This requires each node to decide if he wants to split or no.
+
+At each intersection, we check the maxPathSum (with and without splitting) in the left and right subtrees.
+
+Then we can choose: if we do split at parent 1 (2->1->3 or 3->1->2, the sum is the same), we can take the (parent.val + max(maxPathSum(left), maxPathSum(right))) without split at left subtree and without split at right subtree.
+
+If we do not want to split (2->1 or 3->1), we either take (parent.val + maxPathSum(left)) or (parent.val maxPathSum(right)) without splitting.
+
+The parent chooses if he wants to split or not, and he stores the maxPathSum in a variable that is updated if we found bigger path sum.
+
+Remember, when we have a path and it has splinted somewhere, we can't split again.
+
+This is why we keep track of (maximum path sum with splits) as global variable.
+
+When we backtrace we can tell (return value) the parent its (maximum path sum without splits).
+
+
+
+
+After careful consideration of the working algorithm, we can either take left path (if we gain from it) or not. Thats why we do max(pathSum, 0).
+
+Furthermore, the 'helper' function only returns the sum of the path WITHOUT SPLITS.
+
+And 'self.res' is the sum of the path WITH SPLITS.
