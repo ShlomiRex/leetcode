@@ -9,3 +9,17 @@ My solutions to leet code questions.
 * Two Sum variations
 * Max sub array (kadane's algo)
 * 
+
+# Problems by category
+
+## Dynamic programming problems
+
+Number | Name | Difficulty
+-------|------|-----------
+300    | Longest Increasing Subsequence | Medium
+
+## Binary Tree Traversal Problems
+
+Number | Name | Difficulty
+-------|------|-----------
+257    | Binary Tree Paths | Easy
