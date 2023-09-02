@@ -1,9 +1,7 @@
+# BFS Implementation
+
 from typing import Optional
 
-"""
-Runtime: 69 ms, faster than 26.75% of Python3 online submissions for Maximum Depth of Binary Tree.
-Memory Usage: 16.3 MB, less than 18.15% of Python3 online submissions for Maximum Depth of Binary Tree.
-"""
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -13,15 +11,23 @@ class TreeNode:
 
 
 class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
-        if root is None:
-            return 0
-        # Calculate max depth of left sub tree
-        left_max_depth = self.maxDepth(root.left)
-        # Calculate max depth of right sub tree
-        right_max_depth = self.maxDepth(root.right)
+    def __init__(self):
+        self.queue = []
 
-        return max(left_max_depth, right_max_depth) + 1  # We consider the rot node
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        level = 0
+        self.queue.append(root)
+        while self.queue:
+            for i in range(len(self.queue)):
+                node = self.queue.pop(0)
+                if node.left:
+                    self.queue.append(node.left)
+                if node.right:
+                    self.queue.append(node.right)
+            level += 1
+        return level
 
 
 if __name__ == "__main__":
@@ -43,9 +49,9 @@ if __name__ == "__main__":
     root.right = TreeNode(5)
     assert Solution().maxDepth(root) == 3
 
-    root = TreeNode(1) # lvl 1
-    root.left = TreeNode(2) # lvl 2
-    root.right = TreeNode(5) # lvl 2
-    root.left.right = TreeNode(3) # lvl 3
+    root = TreeNode(1)  # lvl 1
+    root.left = TreeNode(2)  # lvl 2
+    root.right = TreeNode(5)  # lvl 2
+    root.left.right = TreeNode(3)  # lvl 3
     root.left.right.left = TreeNode(1)  # lvl 4
     assert Solution().maxDepth(root) == 4
