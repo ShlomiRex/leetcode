@@ -1,7 +1,7 @@
 # leetcode
 My solutions to leet code questions.
 
-# Problem solving
+## Problem solving
 
 The best way to solve leetcode is first to consider the brute force approach.
 
@@ -29,6 +29,14 @@ This is the best way to learn leetcode patterns.
 * Two Sum variations
 * Max sub array (kadane's algo)
 * Reverse a linked list
+
+## My favorite questions (by decending order)
+
+| Number | Name | Description |
+|--------|------|-------------|
+| 20 | Valid Parentheses | Determine if a string that contains parentheses is valid: "[{()}]". The trick is to use stack. |
+| 141 | Linked List Cycle | Find if linked list contains cycle by using fast and slow pointers. |
+
 
 ## Problems by category
 
