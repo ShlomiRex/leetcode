@@ -18,6 +18,7 @@ This is the best way to learn leetcode patterns.
 | Depth First Search (DFS) recursive  | Store a set of visited nodes. For each node, set 'visited'. For each child check if not visited, then call DFS on it. |
 | DFS recursive - find maximum depth  | We return (1 + max(DFS(left), DFS(right)))                                                                            |
 | Breadth First Search (BFS) recursive | Use a queue that is populated with current level nodes. Then pop from head of queue a node and call BFS on it.        |
+| In-place merge sorted arrays | Given array nums1 and we want to merge with nums2 in non-desending order, we can traverse BACKWARDS in order to not overwrite the nums1 array. It contains '0' (zeroes) at the end so we can overwrite those. |
 
 
 ## Common Interview Questions
