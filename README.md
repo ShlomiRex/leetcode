@@ -36,7 +36,27 @@ This is the best way to learn leetcode patterns.
 |--------|------|-------------|
 | 20 | Valid Parentheses | Determine if a string that contains parentheses is valid: "[{()}]". The trick is to use stack. |
 | 141 | Linked List Cycle | Find if linked list contains cycle by using fast and slow pointers. |
+| 206 | Reverse Linked List | Reverse a linked list in place. Trick: use temporary pointer to the node that we change its links. |
 
+## Common Leetcode Patterns
+
+| Pattern                | Description                                                                                                                                 |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| Sliding Window         | Used for array or string problems where a subarray or substring meets a certain condition. The window changes size or slides based on certain conditions. |
+| Two Pointers           | Used in arrays or linked lists to iterate through the structure with two pointers at different speeds or positions, often to find pairs summing to a target. |
+| Fast and Slow Pointers | A specific case of the two pointers technique, used especially in cycle detection problems in linked lists or arrays.                       |
+| DFS (Depth-First Search)| A traversal algorithm that goes as deep as possible down one path before backtracking. Useful for tree, graph, and some combination problems. |
+| BFS (Breadth-First Search)| A traversal algorithm that explores all the neighbors of a node before moving to the next level neighbors. Used in shortest path, tree, and graph problems. |
+| Binary Search          | Used in sorted arrays or matrices to reduce the search space by half at every step, finding a target value more efficiently.                 |
+| Dynamic Programming    | Solving complex problems by breaking them down into simpler subproblems, storing the results of these subproblems to avoid redundant work.    |
+| Backtracking           | A form of recursion that involves choosing options at each step and backtracking when a path doesn't lead to a solution, often used in permutation, combination, and partitioning problems. |
+| Heap/Priority Queue    | Often used in problems involving sorting, and to efficiently keep track of the kth largest/smallest element in a stream or collection.       |
+
+## Python tricks
+
+1. Find substring with `find()` function
+2. Find substring, starting from the right with `rfind()` function
+3. Reverse string: `my_str.reverse()` or `my_str_revresed = reversed(my_str)`
 
 ## Problems by category
 
