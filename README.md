@@ -32,11 +32,12 @@ This is the best way to learn leetcode patterns.
 
 ## My favorite questions (by decending order)
 
-| Number | Name | Description |
-|--------|------|-------------|
-| 20 | Valid Parentheses | Determine if a string that contains parentheses is valid: "[{()}]". The trick is to use stack. |
-| 141 | Linked List Cycle | Find if linked list contains cycle by using fast and slow pointers. |
-| 206 | Reverse Linked List | Reverse a linked list in place. Trick: use temporary pointer to the node that we change its links. |
+| Name | Difficulty | Description |
+|------|------------|-------------|
+| 20. Valid Parentheses | Easy | Determine if a string that contains parentheses is valid: "[{()}]". The trick is to use stack. |
+| 141. Linked List Cycle | Easy | Find if linked list contains cycle by using fast and slow pointers. |
+| 206. Reverse Linked List | Easy | Reverse a linked list in place. Trick: use temporary pointer to the node that we change its links. |
+| 1249. Minimum Remove to Make Valid Parentheses | Medium | Use data structure of stack to keep track of open paranthesis. Similar to Leetcode 20. |
 
 ## Common Leetcode Patterns
 
@@ -79,3 +80,33 @@ This is the best way to learn leetcode patterns.
 | Difficulty | Name | Source                                                                                                                                                                                                                                                                                                                    |
 |------------|--------|------------------------------|
 | Medium     | 1249. Minimum Remove to Make Valid Parentheses | [Reddit](https://www.reddit.com/r/leetcode/comments/16zr1sj/meta_ramping_up_hiring_what_to_expect/)
+
+## Interview preparation tips from real Meta recruiter
+
+7 steps to success in your coding interview:
+
+1) Do not jump straight into coding, take a few mins to understand the problem and ask any clarifying questions (but not too long).
+
+2) Describe your solution to your interviewer and get their thoughts on your solution.
+
+3) Think about your algorithm(s) (sorting, divide-and-conquer, recursion...), including the complexity and approximate runtime. Ask the interviewer if it’s ok or if you should think about something more optimized. Then figure out your data structure ((Array, Stack/Queue, Hashset/Hashmap/Hashtable/Dictionary, Tree/Binary Tree, Heap, Graph, Bloom Filter, etc.) and implement.
+
+4) Importantly, after you have finished writing your code, run through it verbally with your interviewer. This is really important at this point. Does it really do what you think it does? Make sure to read what is there, not what you think is there.
+
+5) Test your code, put in an input to see what happens. We’re looking for you to find the bugs yourself and fix anything that comes up
+
+6) Restate the complexity. Is it the same, or different to your initial thinking based on what you have actually coded up? Make sure you’re thinking about both space and time
+
+7) Optimize. Proactively suggest ways to optimize to the interviewer and get their feedback to ensure what you’re trying to do is not overly complex and is correct, then code it up.
+
+https://www.geeksforgeeks.org/python-convert-string-to-nested-dictionaries/
+
+Cracking the Coding Interview - The Approach: https://vimeo.com/interviewprepsession/theapproach
+
+Cracking the Coding Interview- Problem Walk-Through: https://vimeo.com/interviewprepsession/problemwalkthrough
+Password FB_IPS.
+
+The above two links are resources we share with software engineering candidates but thought it could be worthwhile sharing regardless.
+ 
+
+Finally, this website (www.pramp.com) has been recommended to me by several candidates. It's free of charge and you can practice live interviews with peers. 
