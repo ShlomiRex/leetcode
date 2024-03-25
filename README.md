@@ -98,15 +98,3 @@ This is the best way to learn leetcode patterns.
 6) Restate the complexity. Is it the same, or different to your initial thinking based on what you have actually coded up? Make sure you’re thinking about both space and time
 
 7) Optimize. Proactively suggest ways to optimize to the interviewer and get their feedback to ensure what you’re trying to do is not overly complex and is correct, then code it up.
-
-https://www.geeksforgeeks.org/python-convert-string-to-nested-dictionaries/
-
-Cracking the Coding Interview - The Approach: https://vimeo.com/interviewprepsession/theapproach
-
-Cracking the Coding Interview- Problem Walk-Through: https://vimeo.com/interviewprepsession/problemwalkthrough
-Password FB_IPS.
-
-The above two links are resources we share with software engineering candidates but thought it could be worthwhile sharing regardless.
- 
-
-Finally, this website (www.pramp.com) has been recommended to me by several candidates. It's free of charge and you can practice live interviews with peers. 
