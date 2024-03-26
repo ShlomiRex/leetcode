@@ -38,6 +38,7 @@ This is the best way to learn leetcode patterns.
 | 141. Linked List Cycle | Easy | Find if linked list contains cycle by using fast and slow pointers. |
 | 206. Reverse Linked List | Easy | Reverse a linked list in place. Trick: use temporary pointer to the node that we change its links. |
 | 1249. Minimum Remove to Make Valid Parentheses | Medium | Use data structure of stack to keep track of open paranthesis. Similar to Leetcode 20. |
+| 70. Climbing Stairs | Easy | It should be introduction to dynamic programming. The first dynamic programming question, because it teaches you a lot. |
 
 ## Common Leetcode Patterns
 
@@ -57,14 +58,15 @@ This is the best way to learn leetcode patterns.
 
 1. Find substring with `find()` function
 2. Find substring, starting from the right with `rfind()` function
-3. Reverse string: `my_str.reverse()` or `my_str_revresed = reversed(my_str)`
+3. Reverse string: `my_str.reverse()` or `my_str_revresed = reversed(my_str)`, but NEVER DO `my_str = my_str.reverse()` since it returns `None`
 
 ## Problems by category
 
 ### Dynamic programming
 
 | Difficulty | Number | Name                           | Main Idea                                                                                                                                      |
-|------------|--------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------|--------|--------------------------------|-----------------------------------------------------------------|
+| Easy       | 70     | Climbing Stairs                | This must be the first dynamic programming leetcode question you do. Its quite interesting and simple, yet complex for the first time. |
 | Medium     | 300    | Longest Increasing Subsequence | Think about the dynamic programming pattern. This pattern matches the question. dp[i] = longest strickly increasing subsequence of nums[0...i] |
 
 ### Binary Tree Traversal
@@ -73,7 +75,6 @@ This is the best way to learn leetcode patterns.
 |------------|--------|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Easy       | 257    | Binary Tree Paths            | Simply return paths from root to all leafs in any order, return string. Easy.                                                                                                                                                                                                                                                    |
 | Hard       | 124    | Binary Tree Maximum Path Sum | Start from leafs. Consider the base cases first of leafs. Then continue to first parent. Consider to split or not to split the path on that current node. Either take left path or right path (subproblems). My solution was 90% close to the working algorithm. Its ok to look at solutions. Don't waste hours on this problem. |
-
 
 ## Meta interview questions
 
