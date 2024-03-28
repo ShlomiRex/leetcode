@@ -82,6 +82,12 @@ This is the best way to learn leetcode patterns.
 |------------|--------|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Medium     | 22     | Generate Parentheses         | Its like a decision tree: each time we either add '(' or ')' such that the string matches valid parentheses. We use DFS to walk from top to bottom to the leafs, and add the leafs to the final solution. The solution is quite elegant, like 10 lines of code.|
 
+### Sliding window
+
+| Difficulty | Name |                                                                                                                                                                                                                                                                                                                   |
+|------------|-------------------------------|
+| Medium     | 2958. Length of Longest Subarray With at Most K Frequency |
+
 ## Meta interview questions
 
 | Difficulty | Name | Source                                                                                                                                                                                                                                                                                                                    |
