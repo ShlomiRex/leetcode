@@ -85,8 +85,13 @@ This is the best way to learn leetcode patterns.
 ### Sliding window
 
 | Difficulty | Name |                                                                                                                                                                                                                                                                                                                   |
-|------------|-------------------------------|
-| Medium     | 2958. Length of Longest Subarray With at Most K Frequency |
+|------------|-----------------------------------------------------------------------|
+| Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |
+| Medium     | 713. Subarray Product Less Than K                                |
+| Hard       | 2302. Count Subarrays With Score Less Than K                     |
+| Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |
+| Medium     | 2962. Count Subarrays Where Max Element Appears at Least K Times |
+
 
 ## Meta interview questions
 
