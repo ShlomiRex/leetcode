@@ -92,6 +92,12 @@ This is the best way to learn leetcode patterns.
 | Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |
 | Medium     | 2962. Count Subarrays Where Max Element Appears at Least K Times |
 
+### Linked list
+
+| Difficulty | Name |                                                                                                                                                                                                                                                                                                                   |
+|------------|-----------------------------------------------------------------------|
+| Easy     | 234. Palindrome Linked List        |
+
 
 ## Meta interview questions
 
