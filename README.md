@@ -98,6 +98,12 @@ This is the best way to learn leetcode patterns.
 |------------|-----------------------------------------------------------------------|
 | Easy     | 234. Palindrome Linked List        |
 
+### Binary search
+
+| Difficulty | Name |                                                                                                                                                                                                                                                                                                                   |
+|------------|-----------------------------------------------------------------------|
+| Medium     | 153. Find Minimum in Rotated Sorted Array        |
+
 
 ## Meta interview questions
 
