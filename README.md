@@ -84,30 +84,29 @@ This is the best way to learn leetcode patterns.
 
 ### Sliding window
 
-| Difficulty | Name |                                                                                                                                                                                                                                                                                                                   |
-|------------|-----------------------------------------------------------------------|
+| Difficulty | Name |
+|------------|------------------------------------------------------------------|
 | Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |
 | Medium     | 713. Subarray Product Less Than K                                |
 | Hard       | 2302. Count Subarrays With Score Less Than K                     |
 | Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |
 | Medium     | 2962. Count Subarrays Where Max Element Appears at Least K Times |
 
-### Linked list
+### Linked list - fast & slow pointers
 
-| Difficulty | Name |                                                                                                                                                                                                                                                                                                                   |
+| Difficulty | Name |
 |------------|-----------------------------------------------------------------------|
 | Easy     | 234. Palindrome Linked List        |
 
 ### Binary search
 
-| Difficulty | Name |                                                                                                                                                                                                                                                                                                                   |
+| Difficulty | Name |
 |------------|-----------------------------------------------------------------------|
 | Medium     | 153. Find Minimum in Rotated Sorted Array        |
 
-
 ## Meta interview questions
 
-| Difficulty | Name | Source                                                                                                                                                                                                                                                                                                                    |
+| Difficulty | Name | Source |
 |------------|--------|------------------------------|
 | Medium     | 1249. Minimum Remove to Make Valid Parentheses | [Reddit](https://www.reddit.com/r/leetcode/comments/16zr1sj/meta_ramping_up_hiring_what_to_expect/)
 
