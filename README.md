@@ -11,15 +11,17 @@ If you can't think of anything or can't implement it, try to look at the solutio
 
 This is the best way to learn leetcode patterns.
 
-## Cheat Sheet
+## Cheat Sheet / Common Patterns
 
 | Name                                | Trick                                                                                                                 |
 |-------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| Contitinous subarray | Every time we see 'continious subarray' always think about the sliding window technique. |
+| Fast & Slow pointers | Usually we see this in linked list. Slow pointer (moves 1 node at a time) and fast pointer (moves 2 nodes at a time). When fast pointer reaches the end of the linked list, the slow pointer is at middle point. Its also used to check if the linked-list is cyclic (if both pointers meet). |
+| Parenthesis questions | Usually, parenthesis question requires the use of a stack. For example, checking if string has valid parenthesis, inserting into the stack open parenthesis, popping from the stack if found closing parenthesis. Check size of stack at the end.|
 | Depth First Search (DFS) recursive  | Store a set of visited nodes. For each node, set 'visited'. For each child check if not visited, then call DFS on it. |
 | DFS recursive - find maximum depth  | We return (1 + max(DFS(left), DFS(right)))                                                                            |
 | Breadth First Search (BFS) recursive | Use a queue that is populated with current level nodes. Then pop from head of queue a node and call BFS on it.        |
 | In-place merge sorted arrays | Given array nums1 and we want to merge with nums2 in non-desending order, we can traverse BACKWARDS in order to not overwrite the nums1 array. It contains '0' (zeroes) at the end so we can overwrite those. |
-
 
 ## Common Interview Questions
 
