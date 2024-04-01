@@ -1,15 +1,11 @@
 # leetcode
-My solutions to leet code questions.
+My solutions to leet code questions. Includes cheat sheet of code for common patterns.
+
+The questions & solutions are also orginized in tables by pattern category.
 
 ## Problem solving
 
-The best way to solve leetcode is first to consider the brute force approach.
-
-Then, think about how you can optimize it.
-
-If you can't think of anything or can't implement it, try to look at the solution. Don't try to solve it.
-
-This is the best way to learn leetcode patterns.
+The best way to solve leetcode is first to consider the brute force approach. Then, think about how you can optimize it. If you can't think of anything or can't implement it, try to look at the solution. Don't try to solve it. This is the best way to learn leetcode patterns.
 
 ## Cheat Sheet / Common Patterns
 
@@ -31,6 +27,14 @@ This is the best way to learn leetcode patterns.
 * Two Sum variations
 * Max sub array (kadane's algo)
 * Reverse a linked list
+
+## Must know questions before an interview
+
+| Difficulty | Name | Description |
+|------------|------|-------------|
+| Medium | 215. Kth Largest Element in an Array | |
+| Easy | 1. Two Sum | |
+| Easy | 206. Reverse Linked List | |
 
 ## My favorite questions (by decending order)
 
@@ -62,6 +66,7 @@ This is the best way to learn leetcode patterns.
 2. Find substring, starting from the right with `rfind()` function
 3. Reverse string: `my_str.reverse()` or `my_str_revresed = reversed(my_str)`, but NEVER DO `my_str = my_str.reverse()` since it returns `None`
 4. Deep copy array: `deep_copy = my_arr[:]`, that means `id(deep_copy) != id(my_arr)` which is different memory address (truly copy). You can change one and not affect the other.
+5. The lookup runtime of `set()` is O(1), so you can ask: `if num in my_set` and it takes O(1). Under the hood it uses a hash table.
 
 ## Problems by category
 
@@ -72,7 +77,7 @@ This is the best way to learn leetcode patterns.
 | Easy       | 70     | Climbing Stairs                | This must be the first dynamic programming leetcode question you do. Its quite interesting and simple, yet complex for the first time. |
 | Medium     | 300    | Longest Increasing Subsequence | Think about the dynamic programming pattern. This pattern matches the question. dp[i] = longest strickly increasing subsequence of nums[0...i] |
 
-### Binary Tree Traversal (DFS, BFS)
+### Binary Tree Traversal, DFS, BFS
 
 In DFS we usually recursivly go left, right and only then we write code to deal with the leafs first:
 
@@ -86,12 +91,30 @@ def dfs(root):
     # ... do something here (usually leafs)
 ```
 
+General BFS code:
+
+```
+def bfs(root):
+    queue = [root]
+    while queue:
+        curr_level = [] # Populate current level (tree height) with nodes of current height
+        for _ in range(len(queue)):
+            node = queue.pop(0)
+            curr_level.append(node.val) # Instead of node.val you can also do 'node' depending on the question
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        # ... do something with curr_level
+```
+
 | Difficulty | Name | Main Idea |
 |------------|-----------------------------------------------|--------------------|
 | Easy       | 257. Binary Tree Paths                        | Simply return paths from root to all leafs in any order, return string. Easy.                                                                                                                                                                                                                                                    |
 | Hard       | 124. Binary Tree Maximum Path Sum             | Start from leafs. Consider the base cases first of leafs. Then continue to first parent. Consider to split or not to split the path on that current node. Either take left path or right path (subproblems). My solution was 90% close to the working algorithm. Its ok to look at solutions. Don't waste hours on this problem. |
 | Medium     | 2265. Count Nodes Equal to Average of Subtree | Use DFS to traverse the tree. For each node, calculate the sum of the subtree and the number of nodes in the subtree. Then calculate the average of the subtree. |
 | Medium     | 1302. Deepest Leaves Sum                      | 2 variables: max level, max level sum. While DFS, update max level (check current height). If current height is equal to max level, add node value to max level sum. |
+| Medium     | 102. Binary Tree Level Order Traversal        | Use BFS to traverse the tree. Use a queue to store the current level nodes. Then pop from the queue and add to the result. |
 
 ### Backtracking
 
