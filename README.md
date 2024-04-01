@@ -78,9 +78,12 @@ In DFS we usually recursivly go left, right and only then we write code to deal 
 
 ```
 def dfs(root):
+    if not root:
+        return
+    # ... do something here
     dfs(root.left)
     dfs(root.right)
-    # do something with the leafs (base case)
+    # ... do something here (usually leafs)
 ```
 
 | Difficulty | Name | Main Idea |
@@ -88,6 +91,7 @@ def dfs(root):
 | Easy       | 257. Binary Tree Paths                        | Simply return paths from root to all leafs in any order, return string. Easy.                                                                                                                                                                                                                                                    |
 | Hard       | 124. Binary Tree Maximum Path Sum             | Start from leafs. Consider the base cases first of leafs. Then continue to first parent. Consider to split or not to split the path on that current node. Either take left path or right path (subproblems). My solution was 90% close to the working algorithm. Its ok to look at solutions. Don't waste hours on this problem. |
 | Medium     | 2265. Count Nodes Equal to Average of Subtree | Use DFS to traverse the tree. For each node, calculate the sum of the subtree and the number of nodes in the subtree. Then calculate the average of the subtree. |
+| Medium     | 1302. Deepest Leaves Sum                      | 2 variables: max level, max level sum. While DFS, update max level (check current height). If current height is equal to max level, add node value to max level sum. |
 
 ### Backtracking
 
