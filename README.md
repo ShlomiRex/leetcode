@@ -61,6 +61,7 @@ This is the best way to learn leetcode patterns.
 1. Find substring with `find()` function
 2. Find substring, starting from the right with `rfind()` function
 3. Reverse string: `my_str.reverse()` or `my_str_revresed = reversed(my_str)`, but NEVER DO `my_str = my_str.reverse()` since it returns `None`
+4. Deep copy array: `deep_copy = my_arr[:]`, that means `id(deep_copy) != id(my_arr)` which is different memory address (truly copy). You can change one and not affect the other.
 
 ## Problems by category
 
@@ -80,11 +81,50 @@ This is the best way to learn leetcode patterns.
 
 ### Backtracking
 
+In backtracking we think decision tree. Each step we choose to do something. We usually have a function that we call (once or more), usually recursivly. Its like iterating the tree and adding to the result, then returning the result.
+
+* For each element, we have two choices: either pick the element or don't pick it (for example).
+* At each level of the recursive tree, we make a choice for each subsequent element as we traverse down the tree.
+
+It look something like:
+
+```
+res = []
+def backtrack(curr_solution, constraints):
+    res.append(curr_solution)
+    backtrack(curr_solution[:] + [choice], constraints)
+backtrack([], constraints)
+return res
+```
+
+Notice instead of appending to `curr_solution` we use deep copy, because `curr_solution` pointer can be accessed and modified multiple times. Its safer this way.
+
 | Difficulty | Number | Name                         | Main Idea                                                                                                                                                                                                                                                                                                                        |
 |------------|--------|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Medium     | 22     | Generate Parentheses         | Its like a decision tree: each time we either add '(' or ')' such that the string matches valid parentheses. We use DFS to walk from top to bottom to the leafs, and add the leafs to the final solution. The solution is quite elegant, like 10 lines of code.|
+| Medium     | 78     | Subsets         | We can choose to add an element to be added to subset or not. I use index to tell what elements to add to the subset (all elements to the left of the index are already added). |
 
 ### Sliding window
+
+The trick for sliding window is to use left, right pointers that represent the current window (think about sub-arrays). It look something like this:
+
+```
+l, r = 0, 0
+while r < len(arr):
+    if <some condition>:
+        r += 1
+    else:
+        l += 1
+```
+
+Sometimes we want to increase the left pointer until we reach a rule:
+
+```
+while r < len(arr):
+    while <some condition>:
+        l += 1
+    r += 1
+```
 
 | Difficulty | Name |
 |------------|------------------------------------------------------------------|
@@ -94,7 +134,12 @@ This is the best way to learn leetcode patterns.
 | Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |
 | Medium     | 2962. Count Subarrays Where Max Element Appears at Least K Times |
 
-### Linked list - fast & slow pointers
+### Two pointers
+
+We have the two pointers pattern.
+
+1) Either one starts from the beginning and the other from the end.
+2) Or both pointers start from the beginning but one pointer moves at faster pace (usually twice as fast) than the other pointer (we call this fast & slow pointers, usually we see this in linked list).
 
 | Difficulty | Name |
 |------------|-----------------------------------------------------------------------|
