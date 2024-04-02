@@ -32,9 +32,9 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 
 | Difficulty | Name | Description |
 |------------|------|-------------|
-| Medium | 215. Kth Largest Element in an Array | |
-| Easy | 1. Two Sum | |
-| Easy | 206. Reverse Linked List | |
+| Medium | 215. Kth Largest Element in an Array | Can sort array and return `nums[len(nums)-k]` which is O(nlogn) or we can use max-heap (populate max-heap in O(1), then pop K roots, and the result is the k'th largest) |
+| Easy | 1. Two Sum | Use hashmap to remember if a specific number is present in the current array. Do calculation: `target - nums[i]` check if this exists in the hashmap / hashset / set. Time complexity: O(n) one pass. |
+| Easy | 206. Reverse Linked List | Use `prev`, `cur` pointers (sometimes I also use `next` pointer) to correctly point and change the linked list. |
 
 ## My favorite questions (by decending order)
 
@@ -67,6 +67,15 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 3. Reverse string: `my_str.reverse()` or `my_str_revresed = reversed(my_str)`, but NEVER DO `my_str = my_str.reverse()` since it returns `None`
 4. Deep copy array: `deep_copy = my_arr[:]`, that means `id(deep_copy) != id(my_arr)` which is different memory address (truly copy). You can change one and not affect the other.
 5. The lookup runtime of `set()` is O(1), so you can ask: `if num in my_set` and it takes O(1). Under the hood it uses a hash table.
+6. Max-heap insertion time complexity (average): O(1), worst case: O(log n), pop root (maximum element in the heap) time complexity: O(log n). Code:
+
+```
+import heapq
+heap = [] # Empty list to represent the heap
+heapq.heappush(heap, 5) # Adding elements to the heap
+max_element = heap[0] # Peek max element without removing
+max_element = heapq.heappop(heap) # Remove and return the maximum element
+```
 
 ## Problems by category
 
