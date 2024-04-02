@@ -3,6 +3,27 @@ My solutions to leet code questions. Includes cheat sheet of code for common pat
 
 The questions & solutions are also orginized in tables by pattern category.
 
+## Table of Contents
+
+- [leetcode](#leetcode)
+  - [Table of Contents](#table-of-contents)
+  - [Problem solving](#problem-solving)
+  - [Cheat Sheet / Common Patterns](#cheat-sheet--common-patterns)
+  - [Common Interview Questions](#common-interview-questions)
+  - [Must know questions before an interview](#must-know-questions-before-an-interview)
+  - [My favorite questions (by decending order)](#my-favorite-questions-by-decending-order)
+  - [Common Leetcode Patterns](#common-leetcode-patterns)
+  - [Python tricks](#python-tricks)
+  - [Problems by category](#problems-by-category)
+    - [Dynamic programming](#dynamic-programming)
+    - [Binary Tree Traversal, DFS, BFS](#binary-tree-traversal-dfs-bfs)
+    - [Backtracking](#backtracking)
+    - [Sliding window](#sliding-window)
+    - [Two pointers](#two-pointers)
+    - [Binary search](#binary-search)
+  - [Meta interview questions](#meta-interview-questions)
+  - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
+
 ## Problem solving
 
 The best way to solve leetcode is first to consider the brute force approach. Then, think about how you can optimize it. If you can't think of anything or can't implement it, try to look at the solution. Don't try to solve it. This is the best way to learn leetcode patterns.
@@ -62,20 +83,23 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 
 ## Python tricks
 
-1. Find substring with `find()` function
-2. Find substring, starting from the right with `rfind()` function
-3. Reverse string: `my_str.reverse()` or `my_str_revresed = reversed(my_str)`, but NEVER DO `my_str = my_str.reverse()` since it returns `None`
-4. Deep copy array: `deep_copy = my_arr[:]`, that means `id(deep_copy) != id(my_arr)` which is different memory address (truly copy). You can change one and not affect the other.
-5. The lookup runtime of `set()` is O(1), so you can ask: `if num in my_set` and it takes O(1). Under the hood it uses a hash table.
-6. Max-heap insertion time complexity (average): O(1), worst case: O(log n), pop root (maximum element in the heap) time complexity: O(log n). Code:
+1. Find substring with `find()` function.
+2. Find substring, starting from the right with `rfind()` function.
+3. Reverse array: `arr.reverse()`
+4. Reverse string or array: `str_or_arr[::-1]` which is slice from beginning to end with negative step (so it reverses).
+5. Deep copy array: `deep_copy = my_arr[:]`, that means `id(deep_copy) != id(my_arr)` which is different memory address (truly copy). You can change one and not affect the other.
+6. The lookup runtime of `set()` is O(1), so you can ask: `if num in my_set` and it takes O(1). Under the hood it uses a hash table.
+7. Max-heap insertion time complexity (average): O(1), worst case: O(log n), pop root (maximum element in the heap) time complexity: O(log n). Code:
 
-```
-import heapq
-heap = [] # Empty list to represent the heap
-heapq.heappush(heap, 5) # Adding elements to the heap
-max_element = heap[0] # Peek max element without removing
-max_element = heapq.heappop(heap) # Remove and return the maximum element
-```
+    ```python
+    import heapq
+    heap = [] # Empty list to represent the heap
+    heapq.heappush(heap, 5) # Adding elements to the heap
+    max_element = heap[0] # Peek max element without removing
+    max_element = heapq.heappop(heap) # Remove and return the maximum element
+    ```
+
+8. Insert text into string between two indexes: `str[:start_index] + text + str[end_index:]`
 
 ## Problems by category
 
@@ -90,7 +114,7 @@ max_element = heapq.heappop(heap) # Remove and return the maximum element
 
 In DFS we usually recursivly go left, right and only then we write code to deal with the leafs first:
 
-```
+```python
 def dfs(root):
     if not root:
         return
@@ -102,7 +126,7 @@ def dfs(root):
 
 General BFS code:
 
-```
+```python
 def bfs(root):
     queue = [root]
     while queue:
@@ -134,7 +158,7 @@ In backtracking we think decision tree. Each step we choose to do something. We 
 
 It look something like:
 
-```
+```python
 res = []
 def backtrack(curr_solution, constraints):
     res.append(curr_solution)
@@ -154,7 +178,7 @@ Notice instead of appending to `curr_solution` we use deep copy, because `curr_s
 
 The trick for sliding window is to use left, right pointers that represent the current window (think about sub-arrays). It look something like this:
 
-```
+```python
 l, r = 0, 0
 while r < len(arr):
     if <some condition>:
@@ -165,7 +189,7 @@ while r < len(arr):
 
 Sometimes we want to increase the left pointer until we reach a rule:
 
-```
+```python
 while r < len(arr):
     while <some condition>:
         l += 1
