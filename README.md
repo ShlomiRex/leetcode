@@ -21,6 +21,7 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Sliding window](#sliding-window)
     - [Two pointers](#two-pointers)
     - [Binary search](#binary-search)
+    - [Matrix](#matrix)
   - [Meta interview questions](#meta-interview-questions)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
 
@@ -221,6 +222,12 @@ We have the two pointers pattern.
 | Difficulty | Name |
 |------------|-----------------------------------------------------------------------|
 | Medium     | 153. Find Minimum in Rotated Sorted Array        |
+
+### Matrix
+
+| Difficulty | Name | Description |
+|------------|-----------------------------------------------------------------------|
+| Medium | 79. Word Search | Use DFS to traverse the matrix. For each cell, check if the word can be found starting from that cell. Can be optimized by marking current cell as visited.|
 
 ## Meta interview questions
 
