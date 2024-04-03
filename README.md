@@ -211,9 +211,10 @@ We have the two pointers pattern.
 1) Either one starts from the beginning and the other from the end.
 2) Or both pointers start from the beginning but one pointer moves at faster pace (usually twice as fast) than the other pointer (we call this fast & slow pointers, usually we see this in linked list).
 
-| Difficulty | Name |
+| Difficulty | Name | Description |
 |------------|-----------------------------------------------------------------------|
-| Easy     | 234. Palindrome Linked List        |
+| Easy     | 234. Palindrome Linked List        | |
+| Medium   | 151. Reverse Words in a String | Using two-pointers is quite complex. But we can solve with min/max heap. | 
 
 ### Binary search
 
