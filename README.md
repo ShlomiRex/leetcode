@@ -22,6 +22,7 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Two pointers](#two-pointers)
     - [Binary search](#binary-search)
     - [Matrix](#matrix)
+    - [Stack](#stack)
   - [Meta interview questions](#meta-interview-questions)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
 
@@ -228,6 +229,12 @@ We have the two pointers pattern.
 | Difficulty | Name | Description |
 |------------|-----------------------------------------------------------------------|
 | Medium | 79. Word Search | Use DFS to traverse the matrix. For each cell, check if the word can be found starting from that cell. Can be optimized by marking current cell as visited.|
+
+### Stack
+
+| Difficulty | Name | Description |
+|------------|-----------------------------------------------------------------------|
+| Easy | 1614. Maximum Nesting Depth of the Parentheses | Use stack to keep track of open paranthesis. For each open paranthesis, push to stack. For each closing paranthesis, pop from stack. Optimize without the use of stack, just O(1) auxulary space. |
 
 ## Meta interview questions
 
