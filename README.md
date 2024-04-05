@@ -24,6 +24,7 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Matrix](#matrix)
     - [Stack](#stack)
   - [Meta interview questions](#meta-interview-questions)
+    - [Dinosour Question](#dinosour-question)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
 
 ## Problem solving
@@ -214,11 +215,27 @@ We have the two pointers pattern.
 2) Or both pointers start from the beginning but one pointer moves at faster pace (usually twice as fast) than the other pointer (we call this fast & slow pointers, usually we see this in linked list).
 
 | Difficulty | Name | Description |
-|------------|-----------------------------------------------------------------------|
+|------------|----------|----------|
 | Easy     | 234. Palindrome Linked List        | |
-| Medium   | 151. Reverse Words in a String | Using two-pointers is quite complex. But we can solve with min/max heap. | 
+| Medium   | 151. Reverse Words in a String | Using two-pointers is quite complex. But we can solve with min/max heap. |
 
 ### Binary search
+
+General code for binary search:
+
+```python
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target: # Check if target is present at mid
+            return mid
+        elif arr[mid] < target: # If target is greater, ignore left half
+            left = mid + 1
+        else: # If target is smaller, ignore right half
+            right = mid - 1
+    return -1 # If target is not present in array
+```
 
 | Difficulty | Name |
 |------------|-----------------------------------------------------------------------|
@@ -226,21 +243,103 @@ We have the two pointers pattern.
 
 ### Matrix
 
+Usually in matrix questions, we convert the question to a graph problem. Then we can use DFS/BFS to traverse the matrix.
+
 | Difficulty | Name | Description |
-|------------|-----------------------------------------------------------------------|
+|------------|------|----------------------------------------------------------------|
 | Medium | 79. Word Search | Use DFS to traverse the matrix. For each cell, check if the word can be found starting from that cell. Can be optimized by marking current cell as visited.|
 
 ### Stack
 
+General code for stack in python:
+
+```python
+stack = []
+stack.append(1) # Push
+stack.pop() # Pop
+```
+
 | Difficulty | Name | Description |
-|------------|-----------------------------------------------------------------------|
+|------------|------|-----------------------------------------------------------------|
 | Easy | 1614. Maximum Nesting Depth of the Parentheses | Use stack to keep track of open paranthesis. For each open paranthesis, push to stack. For each closing paranthesis, pop from stack. Optimize without the use of stack, just O(1) auxulary space. |
 
 ## Meta interview questions
 
 | Difficulty | Name | Source |
 |------------|--------|------------------------------|
-| Medium     | 1249. Minimum Remove to Make Valid Parentheses | [Reddit](https://www.reddit.com/r/leetcode/comments/16zr1sj/meta_ramping_up_hiring_what_to_expect/)
+| Medium     | 1249. Minimum Remove to Make Valid Parentheses | [Reddit](https://www.reddit.com/r/leetcode/comments/16zr1sj/meta_ramping_up_hiring_what_to_expect/) |
+
+### Dinosour Question
+
+You will be supplied with two data files in CSV format.
+
+The first file contains statistics about various dinosaurs. The second file contains additional data.
+
+Given the following formula, speed = ((STRIDE_LENGTH / LEG_LENGTH) - 1) * SQRT(LEG_LENGTH * g)
+
+Where g = 9.8 m/s^2 (gravitational constant)
+
+Write a program to read in the data files from disk, it must then print the names of only the bipedal dinosaurs from fastest to slowest.
+
+Do not print any other information.
+
+```
+$ cat dataset1.csv
+NAME,LEG_LENGTH,DIET
+Hadrosaurus,1.4,herbivore
+Struthiomimus,0.72,omnivore
+Velociraptor,1.8,carnivore
+Triceratops,0.47,herbivore
+Euoplocephalus,2.6,herbivore
+Stegosaurus,1.50,herbivore
+Tyrannosaurus Rex,6.5,carnivore
+
+$ cat dataset2.csv 
+NAME,STRIDE_LENGTH,STANCE
+Euoplocephalus,1.97,quadrupedal
+Stegosaurus,1.70,quadrupedal
+Tyrannosaurus Rex,4.76,bipedal
+Hadrosaurus,1.3,bipedal
+Deinonychus,1.11,bipedal
+Struthiomimus,1.24,bipedal
+Velociraptorr,2.62,bipedal
+```
+
+Possible solution:
+```python
+import csv
+from math import sqrt
+
+# Read data from dataset1.csv and dataset2.csv
+def read_data(file_path):
+    data = {}
+    with open(file_path, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            data[row['NAME']] = row
+    return data
+
+dataset1 = read_data("dataset1.csv")
+dataset2 = read_data("dataset2.csv")
+
+# Calculate speed for bipedal dinosaurs
+g = 9.8  # gravitational constant
+
+bipedal_dinosaurs = []
+for name in dataset1:
+    if name in dataset2 and dataset2[name]['STANCE'] == 'bipedal':
+        leg_length = float(dataset1[name]['LEG_LENGTH'])
+        stride_length = float(dataset2[name]['STRIDE_LENGTH'])
+        speed = ((stride_length / leg_length) - 1) * sqrt(leg_length * g)
+        bipedal_dinosaurs.append((name, speed))
+
+# Sort bipedal dinosaurs by speed
+bipedal_dinosaurs.sort(key=lambda x: x[1], reverse=True)
+
+# Print names of bipedal dinosaurs from fastest to slowest
+for dinosaur in bipedal_dinosaurs:
+    print(dinosaur[0])
+```
 
 ## Interview preparation tips from real Meta recruiter
 
