@@ -262,6 +262,7 @@ stack.pop() # Pop
 | Difficulty | Name | Description |
 |------------|------|-----------------------------------------------------------------|
 | Easy | 1614. Maximum Nesting Depth of the Parentheses | Use stack to keep track of open paranthesis. For each open paranthesis, push to stack. For each closing paranthesis, pop from stack. Optimize without the use of stack, just O(1) auxulary space. |
+| Easy | 1544. Make The String Great | Use stack to keep track of characters. For each character, check if the stack is empty. If not, check if the current character is the same (uppercase or lower case) as the top of the stack. If it is, pop from the stack. Otherwise, push the character to the stack. |
 
 ## Meta interview questions
 
