@@ -218,6 +218,7 @@ We have the two pointers pattern.
 |------------|----------|----------|
 | Easy     | 234. Palindrome Linked List        | |
 | Medium   | 151. Reverse Words in a String | Using two-pointers is quite complex. But we can solve with min/max heap. |
+| Medium   | 443. String Compression | Use two pointers to compress the string. |
 
 ### Binary search
 
