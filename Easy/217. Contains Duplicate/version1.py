@@ -1,6 +1,8 @@
+"""
+Runtime: 1214 ms beats 5%
+Memory: 25.8 MB beats 99%
+"""
 from typing import List
-
-
 def containsDuplicate(nums: List[int]) -> bool:
 	hashmap = {}
 	for n in nums:
