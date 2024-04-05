@@ -23,6 +23,7 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Binary search](#binary-search)
     - [Matrix](#matrix)
     - [Stack](#stack)
+    - [Hashmap / Hashset](#hashmap--hashset)
   - [Meta interview questions](#meta-interview-questions)
     - [Dinosour Question](#dinosour-question)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
@@ -264,6 +265,12 @@ stack.pop() # Pop
 |------------|------|-----------------------------------------------------------------|
 | Easy | 1614. Maximum Nesting Depth of the Parentheses | Use stack to keep track of open paranthesis. For each open paranthesis, push to stack. For each closing paranthesis, pop from stack. Optimize without the use of stack, just O(1) auxulary space. |
 | Easy | 1544. Make The String Great | Use stack to keep track of characters. For each character, check if the stack is empty. If not, check if the current character is the same (uppercase or lower case) as the top of the stack. If it is, pop from the stack. Otherwise, push the character to the stack. |
+
+### Hashmap / Hashset
+
+| Difficulty | Name | Description |
+|------------|------|-----------------------------------------------------------------|
+| Easy | 242. Valid Anagram | Use hashmap to keep track of the frequency of each character in the string. For each character in the first string, increment the frequency. For each character in the second string, decrement the frequency. If the frequency is not zero, return False. Otherwise, return True. |
 
 ## Meta interview questions
 
