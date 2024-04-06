@@ -105,6 +105,8 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 
 8. Insert text into string between two indexes: `str[:start_index] + text + str[end_index:]`
 
+9. For matrix problems, instead of keeping track of visited cells, we can modify the matrix itself (if we can) and mark visited cells with a special character. Only works if the cells values are specific range/values.
+
 ## Problems by category
 
 ### Dynamic programming
