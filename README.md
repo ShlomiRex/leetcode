@@ -250,6 +250,7 @@ Usually in matrix questions, we convert the question to a graph problem. Then we
 | Difficulty | Name | Description |
 |------------|------|----------------------------------------------------------------|
 | Medium | 79. Word Search | Use DFS to traverse the matrix. For each cell, check if the word can be found starting from that cell. Can be optimized by marking current cell as visited.|
+| Medium | 200. Number of Islands | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Classic problem. |
 
 ### Stack
 
