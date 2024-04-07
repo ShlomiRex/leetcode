@@ -105,6 +105,8 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 
 8. Insert text into string between two indexes: `str[:start_index] + text + str[end_index:]`
 
+9. For matrix problems, instead of keeping track of visited cells, we can modify the matrix itself (if we can) and mark visited cells with a special character. Only works if the cells values are specific range/values.
+
 ## Problems by category
 
 ### Dynamic programming
@@ -250,6 +252,7 @@ Usually in matrix questions, we convert the question to a graph problem. Then we
 | Difficulty | Name | Description |
 |------------|------|----------------------------------------------------------------|
 | Medium | 79. Word Search | Use DFS to traverse the matrix. For each cell, check if the word can be found starting from that cell. Can be optimized by marking current cell as visited.|
+| Medium | 200. Number of Islands | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Classic problem. |
 
 ### Stack
 
