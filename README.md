@@ -69,6 +69,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | 141. Linked List Cycle | Easy | Find if linked list contains cycle by using fast and slow pointers. |
 | 206. Reverse Linked List | Easy | Reverse a linked list in place. Trick: use temporary pointer to the node that we change its links. |
 | 200. Number of Islands | Medium | Use DFS to traverse the matrix. For each cell, check if cell is land and mark it. Then call DFS on its neighbors. |
+| 62. Unique Paths | Medium | Use dynamic programming to solve the problem. The number of ways to reach a cell is the sum of the number of ways to reach the cell above and the cell to the left. |
 | 1249. Minimum Remove to Make Valid Parentheses | Medium | Use data structure of stack to keep track of open paranthesis. Similar to Leetcode 20. |
 | 70. Climbing Stairs | Easy | It should be introduction to dynamic programming. The first dynamic programming question, because it teaches you a lot. |
 
