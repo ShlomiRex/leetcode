@@ -113,10 +113,12 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 
 ### Dynamic programming
 
-| Difficulty | Number | Name                           | Main Idea                                                                                                                                      |
-|------------|--------|--------------------------------|-----------------------------------------------------------------|
-| Easy       | 70     | Climbing Stairs                | This must be the first dynamic programming leetcode question you do. Its quite interesting and simple, yet complex for the first time. |
-| Medium     | 300    | Longest Increasing Subsequence | Think about the dynamic programming pattern. This pattern matches the question. dp[i] = longest strickly increasing subsequence of nums[0...i] |
+| Difficulty | Name                                      | Main Idea |
+|------------|-------------------------------------------|-----------------------------------------------------------------|
+| Easy       | 70. Climbing Stairs                       | This must be the first dynamic programming leetcode question you do. Its quite interesting and simple, yet complex for the first time. |
+| Medium     | 300. Longest Increasing Subsequence       | Think about the dynamic programming pattern. This pattern matches the question. dp[i] = longest strickly increasing subsequence of nums[0...i] |
+| Medium     | 62. Unique Paths                          | Use dynamic programming to solve the problem. The number of ways to reach a cell is the sum of the number of ways to reach the cell above and the cell to the left. |
+| Medium     | 63. Unique Paths II                       | Similar to Unique Paths, but with obstacles. Use dynamic programming to solve the problem. |
 
 ### Binary Tree Traversal, DFS, BFS
 
