@@ -14,3 +14,14 @@ def hasPathSum(root: Optional[TreeNode], targetSum: int) -> bool:
             return True
         return dfs(curr_node.left, curr_sum) or dfs(curr_node.right, curr_sum)
     return dfs(root, 0)
+
+if __name__ == "__main__":
+    left = TreeNode(4, TreeNode(11, TreeNode(7), TreeNode(2)))
+    right = TreeNode(8, TreeNode(13), TreeNode(4, None, TreeNode(1)))
+    root = TreeNode(5, left, right)
+    assert hasPathSum(root, 22) == True
+
+    root = TreeNode(1, TreeNode(2), TreeNode(3))
+    assert hasPathSum(root, 5) == False
+
+    assert hasPathSum(None, 0) == False
