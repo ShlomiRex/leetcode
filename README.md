@@ -161,6 +161,7 @@ def bfs(root):
 | Medium     | 102. Binary Tree Level Order Traversal        | Use BFS to traverse the tree. Use a queue to store the current level nodes. Then pop from the queue and add to the result. |
 | Easy       | 404. Sum of Left Leaves                       | Use DFS to traverse the tree. For each node, check if it is a left leaf. If it is, add its value to the result. |
 | Medium     | 129. Sum Root to Leaf Numbers                 | Use DFS to traverse the tree. For each node, calculate the sum of the path from the root to the current node. |
+| Easy       | 112. Path Sum                                 | Use DFS to traverse the tree. For each node, subtract the node value from the target sum and call DFS on its children. OR have cumulative sum and check if equal to target. |
 
 ### Backtracking
 
