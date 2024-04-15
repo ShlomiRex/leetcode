@@ -72,6 +72,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | 62. Unique Paths | Medium | Use dynamic programming to solve the problem. The number of ways to reach a cell is the sum of the number of ways to reach the cell above and the cell to the left. |
 | 1249. Minimum Remove to Make Valid Parentheses | Medium | Use data structure of stack to keep track of open paranthesis. Similar to Leetcode 20. |
 | 70. Climbing Stairs | Easy | It should be introduction to dynamic programming. The first dynamic programming question, because it teaches you a lot. |
+| 129. Sum Root to Leaf Numbers | Medium | Use DFS to traverse the tree. For each node, calculate the sum of the path from the root to the current node. |
 
 ## Common Leetcode Patterns
 
@@ -159,6 +160,7 @@ def bfs(root):
 | Medium     | 1302. Deepest Leaves Sum                      | 2 variables: max level, max level sum. While DFS, update max level (check current height). If current height is equal to max level, add node value to max level sum. |
 | Medium     | 102. Binary Tree Level Order Traversal        | Use BFS to traverse the tree. Use a queue to store the current level nodes. Then pop from the queue and add to the result. |
 | Easy       | 404. Sum of Left Leaves                       | Use DFS to traverse the tree. For each node, check if it is a left leaf. If it is, add its value to the result. |
+| Medium     | 129. Sum Root to Leaf Numbers                 | Use DFS to traverse the tree. For each node, calculate the sum of the path from the root to the current node. |
 
 ### Backtracking
 
