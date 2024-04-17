@@ -162,6 +162,7 @@ def bfs(root):
 | Easy       | 404. Sum of Left Leaves                       | Use DFS to traverse the tree. For each node, check if it is a left leaf. If it is, add its value to the result. |
 | Medium     | 129. Sum Root to Leaf Numbers                 | Use DFS to traverse the tree. For each node, calculate the sum of the path from the root to the current node. |
 | Easy       | 112. Path Sum                                 | Use DFS to traverse the tree. For each node, subtract the node value from the target sum and call DFS on its children. OR have cumulative sum and check if equal to target. |
+| Medium     | 988. Smallest String Starting From Leaf       | Use DFS to traverse the tree. For each node, calculate the string formed by the path from the root to the current node. Return the smallest string lexigraphically. |
 
 ### Backtracking
 
