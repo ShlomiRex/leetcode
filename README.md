@@ -233,6 +233,7 @@ We have the two pointers pattern.
 | Easy     | 234. Palindrome Linked List        | |
 | Medium   | 151. Reverse Words in a String | Using two-pointers is quite complex. But we can solve with min/max heap. |
 | Medium   | 443. String Compression | Use two pointers to compress the string. |
+| Easy     | 680. Valid Palindrome II | Use two pointers to check if the string is a palindrome. If the characters at the two pointers are not equal, check if the string is a palindrome by removing one of the characters. This is not quite easy. |
 
 ### Binary search
 
