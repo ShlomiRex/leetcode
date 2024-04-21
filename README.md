@@ -71,6 +71,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | 200. Number of Islands | Medium | Use DFS to traverse the matrix. For each cell, check if cell is land and mark it. Then call DFS on its neighbors. |
 | 62. Unique Paths | Medium | Use dynamic programming to solve the problem. The number of ways to reach a cell is the sum of the number of ways to reach the cell above and the cell to the left. |
 | 1249. Minimum Remove to Make Valid Parentheses | Medium | Use data structure of stack to keep track of open paranthesis. Similar to Leetcode 20. |
+| 416. Partition Equal Subset Sum | Medium | Use backtracking. For each number, we can choose to add it to the subset or not. We keep track of all possible sums and check if we found target. Meta love this question. |
 | 70. Climbing Stairs | Easy | It should be introduction to dynamic programming. The first dynamic programming question, because it teaches you a lot. |
 | 129. Sum Root to Leaf Numbers | Medium | Use DFS to traverse the tree. For each node, calculate the sum of the path from the root to the current node. |
 | 623. Add One Row to Tree | Medium | Use DFS to traverse the tree. For each node, check if the current level is equal to the target level. If it is, add the new nodes to the tree. |
@@ -192,6 +193,7 @@ Notice instead of appending to `curr_solution` we use deep copy, because `curr_s
 |------------|--------|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Medium     | 22     | Generate Parentheses         | Its like a decision tree: each time we either add '(' or ')' such that the string matches valid parentheses. We use DFS to walk from top to bottom to the leafs, and add the leafs to the final solution. The solution is quite elegant, like 10 lines of code.|
 | Medium     | 78     | Subsets         | We can choose to add an element to be added to subset or not. I use index to tell what elements to add to the subset (all elements to the left of the index are already added). |
+| Medium     | 416    | Partition Equal Subset Sum   | We can choose to add an element to the subset or not. We store all the sums we have. For each num in nums, we add it to the possible sums. |
 
 ### Sliding window
 
