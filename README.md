@@ -166,6 +166,7 @@ def bfs(root):
 | Medium     | 623. Add One Row to Tree                      | Use DFS to traverse the tree. For each node, check if the current level is equal to the target level. If it is, add the new nodes to the tree. |
 | Medium     | 988. Smallest String Starting From Leaf       | Use DFS to traverse the tree. For each node, calculate the string formed by the path from the root to the current node. Return the smallest string lexigraphically. |
 | Easy       | 463. Island Perimeter                         | Use DFS to traverse the grid. For each cell, check if it is land. If it is, add the perimeter of the cell to the result. Just like number of islands. Use DFS to flood fill. |
+| Easy       | 1971. Find if Path Exists in Graph            | General graph question (not binary tree). Use BFS to traverse the graph. For each node, check if it is the target node. If it is, return True. Else, add its neighbors to the queue. Keep track of visited nodes to avoid loops. |
 
 ### Backtracking
 
