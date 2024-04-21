@@ -214,13 +214,14 @@ while r < len(arr):
     r += 1
 ```
 
-| Difficulty | Name |
-|------------|------------------------------------------------------------------|
-| Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |
-| Medium     | 713. Subarray Product Less Than K                                |
-| Hard       | 2302. Count Subarrays With Score Less Than K                     |
-| Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |
-| Medium     | 2962. Count Subarrays Where Max Element Appears at Least K Times |
+| Difficulty | Name | Description |
+|------------|------------------------------------------------------------------|------------------|
+| Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |                  |
+| Medium     | 713. Subarray Product Less Than K                                |                  |
+| Hard       | 2302. Count Subarrays With Score Less Than K                     |                  |
+| Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |                  |
+| Medium     | 2962. Count Subarrays Where Max Element Appears at Least K Times |                  |
+| Easy       | 121. Best Time to Buy and Sell Stock                             | Buy and sell stock problem. Use sliding window to find the minimum price and maximum profit. We don't increment left pointer, we set it to minimum price. |
 
 ### Two pointers
 
@@ -266,6 +267,7 @@ Usually in matrix questions, we convert the question to a graph problem. Then we
 |------------|------|----------------------------------------------------------------|
 | Medium | 79. Word Search | Use DFS to traverse the matrix. For each cell, check if the word can be found starting from that cell. Can be optimized by marking current cell as visited.|
 | Medium | 200. Number of Islands | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Classic problem. |
+| Medium | 1992. Find All Groups of Farmland | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Or just use regular for loops to traverse matrix, this is faster. |
 
 ### Stack
 
