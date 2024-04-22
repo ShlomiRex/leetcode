@@ -165,6 +165,7 @@ def bfs(root):
 | Easy       | 112. Path Sum                                 | Use DFS to traverse the tree. For each node, subtract the node value from the target sum and call DFS on its children. OR have cumulative sum and check if equal to target. |
 | Medium     | 623. Add One Row to Tree                      | Use DFS to traverse the tree. For each node, check if the current level is equal to the target level. If it is, add the new nodes to the tree. |
 | Medium     | 988. Smallest String Starting From Leaf       | Use DFS to traverse the tree. For each node, calculate the string formed by the path from the root to the current node. Return the smallest string lexigraphically. |
+| Medium     | 752. Open the Lock                            | Use BFS and a queue to traverse the graph. For each node, generate the next possible nodes and add them to the queue. No optimization can be done here, very hard question without hints. |
 
 ### Backtracking
 
