@@ -24,6 +24,7 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Matrix](#matrix)
     - [Stack](#stack)
     - [Hashmap / Hashset](#hashmap--hashset)
+    - [Memorization](#memorization)
   - [Meta interview questions](#meta-interview-questions)
     - [Dinosour Question](#dinosour-question)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
@@ -294,6 +295,12 @@ stack.pop() # Pop
 | Difficulty | Name | Description |
 |------------|------|-----------------------------------------------------------------|
 | Easy | 242. Valid Anagram | Use hashmap to keep track of the frequency of each character in the string. For each character in the first string, increment the frequency. For each character in the second string, decrement the frequency. If the frequency is not zero, return False. Otherwise, return True. |
+
+### Memorization
+
+| Difficulty | Name | Description |
+|------------|------|-----------------------------------------------------------------|
+| Easy | 1137. N-th Tribonacci Number | Use memorization to store the results of the subproblems. For each number, calculate the sum of the previous three numbers. We can also optimize, and use only 3 variables instead of a whole array. |
 
 ## Meta interview questions
 
