@@ -245,6 +245,7 @@ We have the two pointers pattern.
 | Medium   | 443. String Compression | Use two pointers to compress the string. |
 | Easy     | 680. Valid Palindrome II | Use two pointers to check if the string is a palindrome. If the characters at the two pointers are not equal, check if the string is a palindrome by removing one of the characters. This is not quite easy. |
 | Medium   | 167. Two Sum II - Input array is sorted | Use two pointers, one at the beginning and one at the end. If the sum is greater than the target, move the right pointer to the left. If the sum is less than the target, move the left pointer to the right. |
+| Medium   | 15. 3Sum | Use two pointers to find the sum of three numbers that is equal to the target. Sort the array first. For each number, use two pointers to find the sum of the other two numbers. |
 
 ### Binary search
 
