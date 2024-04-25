@@ -124,6 +124,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | Medium     | 300. Longest Increasing Subsequence       | Think about the dynamic programming pattern. This pattern matches the question. dp[i] = longest strickly increasing subsequence of nums[0...i] |
 | Medium     | 62. Unique Paths                          | Use dynamic programming to solve the problem. The number of ways to reach a cell is the sum of the number of ways to reach the cell above and the cell to the left. |
 | Medium     | 63. Unique Paths II                       | Similar to Unique Paths, but with obstacles. Use dynamic programming to solve the problem. |
+| Medium     | 2370. Longest Ideal Subsequence           | The longest ideal subsequence is the longest subsequence where the difference between adjacent elements is 1. Very, very hard question. |
 
 ### Binary Tree Traversal, DFS, BFS
 
