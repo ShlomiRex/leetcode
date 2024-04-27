@@ -91,6 +91,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | Dynamic Programming    | Solving complex problems by breaking them down into simpler subproblems, storing the results of these subproblems to avoid redundant work.    |
 | Backtracking           | A form of recursion that involves choosing options at each step and backtracking when a path doesn't lead to a solution, often used in permutation, combination, and partitioning problems. |
 | Heap/Priority Queue    | Often used in problems involving sorting, and to efficiently keep track of the kth largest/smallest element in a stream or collection.       |
+| 2D Dynamic Programming | As soon as you hear 'minimize' or 'maximize' in a matrix, thats 2D dynamic programming in most cases. |
 
 ## Python tricks
 
@@ -125,6 +126,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | Medium     | 62. Unique Paths                          | Use dynamic programming to solve the problem. The number of ways to reach a cell is the sum of the number of ways to reach the cell above and the cell to the left. |
 | Medium     | 63. Unique Paths II                       | Similar to Unique Paths, but with obstacles. Use dynamic programming to solve the problem. |
 | Medium     | 2370. Longest Ideal Subsequence           | The longest ideal subsequence is the longest subsequence where the difference between adjacent elements is 1. Very, very hard question. |
+| Hard       | 1289. Minimum Falling Path Sum II         | For each row, calculate the minimum falling path sum. Use DP matrix for faster calculation. The 2D-DP solution is not hard for this question. |
 
 ### Binary Tree Traversal, DFS, BFS
 
