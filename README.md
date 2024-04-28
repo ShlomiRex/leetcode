@@ -142,7 +142,7 @@ def dfs(root):
     # ... do something here (usually leafs)
 ```
 
-General BFS code:
+General BFS code for binary tree:
 
 ```python
 def bfs(root):
@@ -152,11 +152,27 @@ def bfs(root):
         for _ in range(len(queue)):
             node = queue.pop(0)
             curr_level.append(node.val) # Instead of node.val you can also do 'node' depending on the question
+            # Append children to the queue
             if node.left:
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
         # ... do something with curr_level
+```
+
+General BFS code for graph:
+
+```python
+def bfs(root) -> int:
+    queue = [(root, 0, None)] # Current node, it's level, and parent
+    while queue:
+        curr, level, parent = queue.pop(0)
+        print(f"Node: {curr}, level: {level}")
+        # Where graph is hashmap of adjacency list (graph[u] = [v1, v2, ...] and graph[v1] = [u1, u2, ...])
+        for child in graph[curr]:
+            # Instead of visited set we keep track of parent (better memory complexity)
+            if child != parent:
+                queue.append((child, level+1, curr))
 ```
 
 | Difficulty | Name | Main Idea |
@@ -175,6 +191,7 @@ def bfs(root):
 | Easy       | 1971. Find if Path Exists in Graph            | General graph question (not binary tree). Use BFS to traverse the graph. For each node, check if it is the target node. If it is, return True. Else, add its neighbors to the queue. Keep track of visited nodes to avoid loops. |
 | Medium     | 752. Open the Lock                            | Use BFS and a queue to traverse the graph. For each node, generate the next possible nodes and add them to the queue. No optimization can be done here, very hard question without hints. |
 | Medium     | 310. Minimum Height Trees                     | Remove leafs from the tree until there are 1 or 2 nodes left. The remaining nodes are the root of the minimum height trees. Use BFS to remove leafs in batches. |
+| Hard       | 834. Sum of Distances in Tree                 | Brute force BFS is fine but we get time limit exceeded. So we use special formula: `res[child] = res[parent] - count[child] + (N - count[child])` where `count[child]` is the number of nodes in the subtree rooted at child. |
 
 ### Backtracking
 
