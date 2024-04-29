@@ -25,6 +25,7 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Stack](#stack)
     - [Hashmap / Hashset](#hashmap--hashset)
     - [Memorization](#memorization)
+    - [Prefix Sum](#prefix-sum)
   - [Meta interview questions](#meta-interview-questions)
     - [Dinosour Question](#dinosour-question)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
@@ -325,11 +326,18 @@ stack.pop() # Pop
 |------------|------|-----------------------------------------------------------------|
 | Easy | 1137. N-th Tribonacci Number | Use memorization to store the results of the subproblems. For each number, calculate the sum of the previous three numbers. We can also optimize, and use only 3 variables instead of a whole array. |
 
+### Prefix Sum
+
+| Difficulty | Name | Description |
+|------------|------|-----------------------------------------------------------------|
+| Medium | 560. Subarray Sum Equals K | We take the brute force approach O(n^2) and optimize it. Use prefix sum to calculate the sum of the subarray. For each subarray, calculate the sum of the subarray. If the sum is equal to the target, increment the count. |
+
 ## Meta interview questions
 
 | Difficulty | Name | Source |
 |------------|--------|------------------------------|
 | Medium     | 1249. Minimum Remove to Make Valid Parentheses | [Reddit](https://www.reddit.com/r/leetcode/comments/16zr1sj/meta_ramping_up_hiring_what_to_expect/) |
+| Medium     | 560. Subarray Sum Equals K | |
 
 ### Dinosour Question
 
