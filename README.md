@@ -193,6 +193,7 @@ def bfs(root) -> int:
 | Medium     | 752. Open the Lock                            | Use BFS and a queue to traverse the graph. For each node, generate the next possible nodes and add them to the queue. No optimization can be done here, very hard question without hints. |
 | Medium     | 310. Minimum Height Trees                     | Remove leafs from the tree until there are 1 or 2 nodes left. The remaining nodes are the root of the minimum height trees. Use BFS to remove leafs in batches. |
 | Hard       | 834. Sum of Distances in Tree                 | Brute force BFS is fine but we get time limit exceeded. So we use special formula: `res[child] = res[parent] - count[child] + (N - count[child])` where `count[child]` is the number of nodes in the subtree rooted at child. |
+| Medium     | 994. Rotting Oranges                          | Use BFS to traverse the grid. For each cell, check if it is a rotten orange. If it is, add it to the queue. Then, for each rotten orange, rot its neighbors in BFS manner (add to new queue and replace current queue with this new queue). Count steps needed to rot all oranges. Return -1 if not all oranges are rotten. |
 
 ### Backtracking
 
