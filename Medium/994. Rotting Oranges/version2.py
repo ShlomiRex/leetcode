@@ -2,6 +2,9 @@
 Runtime: 47 ms beats 76%
 Memory: 16.5 MB beats 65%
 
+Time complexity: O(rows*cols) each cell is visited once
+Space complexity: O(rows*cols) depends on queue, which can be all the matrix
+
 Without using visited set. Also used queue.extend instead of 4 lines of python code.
 """
 from typing import List
