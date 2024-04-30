@@ -26,6 +26,7 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Hashmap / Hashset](#hashmap--hashset)
     - [Memorization](#memorization)
     - [Prefix Sum](#prefix-sum)
+    - [Bit manipulation](#bit-manipulation)
   - [Meta interview questions](#meta-interview-questions)
     - [Dinosour Question](#dinosour-question)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
@@ -244,6 +245,21 @@ while r < len(arr):
     r += 1
 ```
 
+You can use sliding window to get all substrings of given string:
+
+```python
+def all_substrings(s):
+    substrings = []
+    n = len(s)
+    
+    for window_size in range(1, n + 1):
+        for start in range(n - window_size + 1):
+            end = start + window_size
+            substrings.append(s[start:end])
+    
+    return substrings
+```
+
 | Difficulty | Name | Description |
 |------------|------------------------------------------------------------------|------------------|
 | Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |                  |
@@ -328,11 +344,19 @@ stack.pop() # Pop
 |------------|------|-----------------------------------------------------------------|
 | Easy | 1137. N-th Tribonacci Number | Use memorization to store the results of the subproblems. For each number, calculate the sum of the previous three numbers. We can also optimize, and use only 3 variables instead of a whole array. |
 
+
 ### Prefix Sum
 
 | Difficulty | Name | Description |
 |------------|------|-----------------------------------------------------------------|
 | Medium | 560. Subarray Sum Equals K | We take the brute force approach O(n^2) and optimize it. Use prefix sum to calculate the sum of the subarray. For each subarray, calculate the sum of the subarray. If the sum is equal to the target, increment the count. |
+| Medium | 1915. Number of Wonderful Substrings | Similar to prefix sum we have prefix bitmasks XOR. |
+
+### Bit manipulation
+
+| Difficulty | Name | Description |
+|------------|------|-----------------------------------------------------------------|
+| Medium | 1915. Number of Wonderful Substrings | Use prefix bitmasks XOR to calculate the XOR of the subarray. For each subarray, calculate the XOR of the subarray. If the XOR is a power of 2, increment the count. |
 
 ## Meta interview questions
 
