@@ -367,6 +367,7 @@ stack.pop() # Pop
 | Difficulty | Name | Description |
 |------------|------|-----------------------------------------------------------------|
 | Medium     | 692. Top K Frequent Words | Use max-heap to keep track of the frequency of each word. For each word, increment the frequency. Then, for each word in the frequency hashmap, add it to the max-heap. Pop the top K elements from the max-heap. |
+| Medium     | 215. Kth Largest Element in an Array | Use max-heap to keep track of the K largest elements. For each element, add it to the max-heap. Pop the top element from the max-heap K times. |
 
 ## Meta interview questions
 
