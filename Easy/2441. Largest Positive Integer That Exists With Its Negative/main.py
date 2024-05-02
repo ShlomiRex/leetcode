@@ -1,3 +1,8 @@
+"""
+Runtime: 110 ms beats 54%
+Memory: 16.8 MB beats 23%
+Time taken: 2 minutes 58 second
+"""
 from typing import List
 def findMaxK(nums: List[int]) -> int:
     hashset = set()
