@@ -14,7 +14,7 @@ The questions & solutions are also orginized in tables by pattern category.
   - [My favorite questions (by decending order)](#my-favorite-questions-by-decending-order)
   - [Common Leetcode Patterns](#common-leetcode-patterns)
   - [Python tricks](#python-tricks)
-  - [Problems by category](#problems-by-category)
+  - [Problems by pattern / category](#problems-by-pattern--category)
     - [Dynamic programming](#dynamic-programming)
     - [Binary Tree Traversal, DFS, BFS](#binary-tree-traversal-dfs-bfs)
     - [Backtracking](#backtracking)
@@ -25,8 +25,9 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Stack](#stack)
     - [Hashmap / Hashset](#hashmap--hashset)
     - [Memorization](#memorization)
-    - [Prefix Sum](#prefix-sum)
+    - [Prefix pattern](#prefix-pattern)
     - [Bit manipulation](#bit-manipulation)
+    - [Heap/Priority Queue](#heappriority-queue)
   - [Meta interview questions](#meta-interview-questions)
     - [Dinosour Question](#dinosour-question)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
@@ -117,7 +118,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 
 9. For matrix problems, instead of keeping track of visited cells, we can modify the matrix itself (if we can) and mark visited cells with a special character. Only works if the cells values are specific range/values.
 
-## Problems by category
+## Problems by pattern / category
 
 ### Dynamic programming
 
@@ -348,7 +349,7 @@ stack.pop() # Pop
 | Easy | 1137. N-th Tribonacci Number | Use memorization to store the results of the subproblems. For each number, calculate the sum of the previous three numbers. We can also optimize, and use only 3 variables instead of a whole array. |
 
 
-### Prefix Sum
+### Prefix pattern
 
 | Difficulty | Name | Description |
 |------------|------|-----------------------------------------------------------------|
@@ -360,6 +361,12 @@ stack.pop() # Pop
 | Difficulty | Name | Description |
 |------------|------|-----------------------------------------------------------------|
 | Medium | 1915. Number of Wonderful Substrings | Use prefix bitmasks XOR to calculate the XOR of the subarray. For each subarray, calculate the XOR of the subarray. If the XOR is a power of 2, increment the count. |
+
+### Heap/Priority Queue
+
+| Difficulty | Name | Description |
+|------------|------|-----------------------------------------------------------------|
+| Medium     | 692. Top K Frequent Words | Use max-heap to keep track of the frequency of each word. For each word, increment the frequency. Then, for each word in the frequency hashmap, add it to the max-heap. Pop the top K elements from the max-heap. |
 
 ## Meta interview questions
 
