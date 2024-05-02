@@ -196,6 +196,7 @@ def bfs(root) -> int:
 | Hard       | 834. Sum of Distances in Tree                 | Brute force BFS is fine but we get time limit exceeded. So we use special formula: `res[child] = res[parent] - count[child] + (N - count[child])` where `count[child]` is the number of nodes in the subtree rooted at child. |
 | Medium     | 994. Rotting Oranges                          | Use BFS to traverse the grid. For each cell, check if it is a rotten orange. If it is, add it to the queue. Then, for each rotten orange, rot its neighbors in BFS manner (add to new queue and replace current queue with this new queue). Count steps needed to rot all oranges. Return -1 if not all oranges are rotten. |
 | Easy       | 100. Same Tree                                | Use DFS to traverse the trees. For each node, check if the nodes are equal and exist. If they are, call DFS on their children. |
+| Easy       | 111. Minimum Depth of Binary Tree             | Use DFS and find the minimum depth of the tree. For each node, calculate the minimum depth of the left and right subtrees. |
 
 ### Backtracking
 
