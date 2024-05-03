@@ -373,8 +373,10 @@ stack.pop() # Pop
 
 | Difficulty | Name | Source |
 |------------|--------|------------------------------|
-| Medium     | 1249. Minimum Remove to Make Valid Parentheses | [Reddit](https://www.reddit.com/r/leetcode/comments/16zr1sj/meta_ramping_up_hiring_what_to_expect/) |
-| Medium     | 560. Subarray Sum Equals K | |
+| Medium     | 1249. Minimum Remove to Make Valid Parentheses    | [Reddit](https://www.reddit.com/r/leetcode/comments/16zr1sj/meta_ramping_up_hiring_what_to_expect/) |
+| Medium     | 560. Subarray Sum Equals K                        | |
+| Medium     | 824. Goat Latin                                   | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
+| Easy       | 283. Move Zeroes                                  | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
 
 ### Dinosour Question
 
