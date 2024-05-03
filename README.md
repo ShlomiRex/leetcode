@@ -377,6 +377,9 @@ stack.pop() # Pop
 | Medium     | 560. Subarray Sum Equals K                        | |
 | Medium     | 824. Goat Latin                                   | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
 | Easy       | 283. Move Zeroes                                  | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
+| Medium     | 15. 3Sum                                          | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
+| Medium     | 416. Partition Equal Subset Sum                   | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
+
 
 ### Dinosour Question
 
