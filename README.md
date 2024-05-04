@@ -7,6 +7,7 @@ The questions & solutions are also orginized in tables by pattern category.
 
 - [leetcode](#leetcode)
   - [Table of Contents](#table-of-contents)
+  - [Interview stages cheat sheet](#interview-stages-cheat-sheet)
   - [Problem solving](#problem-solving)
   - [Cheat Sheet / Common Patterns](#cheat-sheet--common-patterns)
   - [Common Interview Questions](#common-interview-questions)
@@ -28,13 +29,65 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Prefix pattern](#prefix-pattern)
     - [Bit manipulation](#bit-manipulation)
     - [Heap/Priority Queue](#heappriority-queue)
+    - [Linked List](#linked-list)
   - [Meta interview questions](#meta-interview-questions)
     - [Dinosour Question](#dinosour-question)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
 
+## Interview stages cheat sheet
+
+**Stage 1: Introductions**
+
+* Have a rehearsed 30-60 second introduction regarding your education, work experience, and interests prepared.
+* Smile and speak with confidence.
+* Pay attention when the interviewer talks about themselves and incorporate their work into your questions later.
+
+**Stage 2: Problem statement**
+
+* Paraphrase the problem back to the interviewer after they have read it to you.
+* Ask clarifying questions about the input such as the expected input size, edge cases, and invalid inputs.
+* Quickly walk through an example test case to confirm you understand the problem.
+
+**Stage 3: Brainstorming DS&A**
+
+* Always be thinking out loud.
+* Break the problem down: figure out what you need to do, and think about what data structure or algorithm can accomplish it with a good time complexity.
+* Be receptive to any comments or feedback from the interviewer, they are probably trying to hint you towards the correct solution.
+* Once you have an idea, before coding, explain your idea to the interviewer and make sure they understand and agree that it is a reasonable approach.
+
+**Stage 4: Implementation**
+
+* Explain your decision-making as you implement. When you declare things like sets, explain what the purpose is.
+* Write clean code that conforms to your programming language's conventions.
+* Avoid writing duplicate code - use a helper function or for loop if you are writing similar code multiple times.
+* If you are stuck, don't panic - communicate your concerns with your interviewer.
+* Don't be scared to start with a brute force solution (while acknowledging that it is brute force), then improve it by optimizing the "slow" parts.
+* Keep thinking out loud and talk with your interviewer. It makes it easier for them to give you hints.
+
+**Stage 5: Testing & debugging**
+
+* When walking through test cases, keep track of the variables by writing at the bottom of the file, and continuously update them. Condense trivial parts like creating a prefix sum to save time.
+* If there are errors and the environment supports running code, put print statements in your algorithm and walk through a small test case, comparing the expected value of variables and the actual values.
+* Be vocal and keep talking with your interviewer if you run into any problems.
+
+**Stage 6: Explanations and follow-ups**
+
+Questions you should be prepared to answer:
+
+* Time and space complexity, average and worst case.
+* Why did you choose this data structure, algorithm, or logic?
+* Do you think the algorithm could be improved in terms of complexity? If they ask you this, then the answer is usually yes, especially if your algorithm is slower than o(n).
+
+**Stage 7: Outro**
+
+* Have questions regarding the company prepared.
+* Be interested, smile, and ask follow-up questions to your interviewer's responses.
+
 ## Problem solving
 
 The best way to solve leetcode is first to consider the brute force approach. Then, think about how you can optimize it. If you can't think of anything or can't implement it, try to look at the solution. Don't try to solve it. This is the best way to learn leetcode patterns.
+
+![](README-resources/flowchart.png)
 
 ## Cheat Sheet / Common Patterns
 
@@ -122,6 +175,25 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 
 ### Dynamic programming
 
+Dynamic programming: top-down memoization:
+
+```python
+def fn(arr):
+    def dp(STATE):
+        if BASE_CASE:
+            return 0
+        
+        if STATE in memo:
+            return memo[STATE]
+        
+        ans = RECURRENCE_RELATION(STATE)
+        memo[STATE] = ans
+        return ans
+
+    memo = {}
+    return dp(STATE_FOR_WHOLE_INPUT)
+```
+
 | Difficulty | Name                                      | Main Idea |
 |------------|-------------------------------------------|-----------------------------------------------------------------|
 | Easy       | 70. Climbing Stairs                       | This must be the first dynamic programming leetcode question you do. Its quite interesting and simple, yet complex for the first time. |
@@ -163,6 +235,30 @@ def bfs(root):
         # ... do something with curr_level
 ```
 
+Another BFS code for binary tree (here we use deque - double ended queue library instead of regular list):
+
+```python
+from collections import deque
+
+def fn(root):
+    queue = deque([root])
+    ans = 0
+
+    while queue:
+        current_length = len(queue)
+        # do logic for current level
+
+        for _ in range(current_length):
+            node = queue.popleft()
+            # do logic
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+    return ans
+```
+
 General BFS code for graph:
 
 ```python
@@ -176,6 +272,43 @@ def bfs(root) -> int:
             # Instead of visited set we keep track of parent (better memory complexity)
             if child != parent:
                 queue.append((child, level+1, curr))
+```
+
+Iterative DFS (notice, in recursion we have stack frame, here we emulating the same thing):
+
+```python
+def dfs(root):
+    stack = [root]
+    ans = 0
+
+    while stack:
+        node = stack.pop()
+        # do logic
+        if node.left:
+            stack.append(node.left)
+        if node.right:
+            stack.append(node.right)
+
+    return ans
+```
+
+Another iterative DFS:
+
+```python
+def fn(graph):
+    stack = [START_NODE]
+    seen = {START_NODE}
+    ans = 0
+
+    while stack:
+        node = stack.pop()
+        # do some logic
+        for neighbor in graph[node]:
+            if neighbor not in seen:
+                seen.add(neighbor)
+                stack.append(neighbor)
+    
+    return ans
 ```
 
 | Difficulty | Name | Main Idea |
@@ -218,6 +351,23 @@ backtrack([], constraints)
 return res
 ```
 
+Another general code for backtracking:
+
+```python
+def backtrack(curr, OTHER_ARGUMENTS...):
+    if (BASE_CASE):
+        # modify the answer
+        return
+    
+    ans = 0
+    for (ITERATE_OVER_INPUT):
+        # modify the current state
+        ans += backtrack(curr, OTHER_ARGUMENTS...)
+        # undo the modification of the current state
+    
+    return ans
+```
+
 Notice instead of appending to `curr_solution` we use deep copy, because `curr_solution` pointer can be accessed and modified multiple times. Its safer this way.
 
 | Difficulty | Number | Name                         | Main Idea                                                                                                                                                                                                                                                                                                                        |
@@ -238,6 +388,23 @@ while r < len(arr):
         r += 1
     else:
         l += 1
+```
+
+Sliding window
+```python
+def fn(arr):
+    left = ans = curr = 0
+
+    for right in range(len(arr)):
+        # do logic here to add arr[right] to curr
+
+        while WINDOW_CONDITION_BROKEN:
+            # remove arr[left] from curr
+            left += 1
+
+        # update ans
+    
+    return ans
 ```
 
 Sometimes we want to increase the left pointer until we reach a rule:
@@ -279,6 +446,45 @@ We have the two pointers pattern.
 
 1) Either one starts from the beginning and the other from the end.
 2) Or both pointers start from the beginning but one pointer moves at faster pace (usually twice as fast) than the other pointer (we call this fast & slow pointers, usually we see this in linked list).
+
+Two pointers: one input, opposite ends
+```python
+def fn(arr):
+    left = ans = 0
+    right = len(arr) - 1
+
+    while left < right:
+        # do some logic here with left and right
+        if CONDITION:
+            left += 1
+        else:
+            right -= 1
+    
+    return ans
+```
+
+Two pointers: two inputs, exhaust both
+```python
+def fn(arr1, arr2):
+    i = j = ans = 0
+
+    while i < len(arr1) and j < len(arr2):
+        # do some logic here
+        if CONDITION:
+            i += 1
+        else:
+            j += 1
+    
+    while i < len(arr1):
+        # do logic
+        i += 1
+    
+    while j < len(arr2):
+        # do logic
+        j += 1
+    
+    return ans
+```
 
 | Difficulty | Name | Description |
 |------------|----------|----------|
@@ -351,6 +557,17 @@ stack.pop() # Pop
 
 ### Prefix pattern
 
+Build a prefix sum
+
+```python
+def fn(arr):
+    prefix = [arr[0]]
+    for i in range(1, len(arr)):
+        prefix.append(prefix[-1] + arr[i])
+    
+    return prefix
+```
+
 | Difficulty | Name | Description |
 |------------|------|-----------------------------------------------------------------|
 | Medium | 560. Subarray Sum Equals K | We take the brute force approach O(n^2) and optimize it. Use prefix sum to calculate the sum of the subarray. For each subarray, calculate the sum of the subarray. If the sum is equal to the target, increment the count. |
@@ -364,10 +581,59 @@ stack.pop() # Pop
 
 ### Heap/Priority Queue
 
+Find top k elements with heap:
+
+```python
+import heapq
+
+def fn(arr, k):
+    heap = []
+    for num in arr:
+        # do some logic to push onto heap according to problem's criteria
+        heapq.heappush(heap, (CRITERIA, num))
+        if len(heap) > k:
+            heapq.heappop(heap)
+    
+    return [num for num in heap]
+```
+
 | Difficulty | Name | Description |
 |------------|------|-----------------------------------------------------------------|
 | Medium     | 692. Top K Frequent Words | Use max-heap to keep track of the frequency of each word. For each word, increment the frequency. Then, for each word in the frequency hashmap, add it to the max-heap. Pop the top K elements from the max-heap. |
 | Medium     | 215. Kth Largest Element in an Array | Use max-heap to keep track of the K largest elements. For each element, add it to the max-heap. Pop the top element from the max-heap K times. |
+
+### Linked List
+
+Slow, fast pointers:
+
+```python
+def fn(head):
+    slow = head
+    fast = head
+    ans = 0
+
+    while fast and fast.next:
+        # do logic
+        slow = slow.next
+        fast = fast.next.next
+    
+    return ans
+```
+
+Reversing linked list:
+
+```python
+def fn(head):
+    curr = head
+    prev = None
+    while curr:
+        next_node = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next_node 
+        
+    return prev
+```
 
 ## Meta interview questions
 
