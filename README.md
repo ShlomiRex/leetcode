@@ -651,6 +651,13 @@ def fn(head):
 | Easy       | 283. Move Zeroes                                  | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
 | Medium     | 15. 3Sum                                          | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
 | Medium     | 416. Partition Equal Subset Sum                   | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
+| Medium     | 529. Minesweeper                                  | [Glassdoor](https://www.glassdoor.com/Interview/Meta-Production-Engineer-Interview-Questions-EI_IE40772.0,4_KO5,24_IP2.htm?filter.jobTitleFTS=Production+Engineer) |
+
+Non-leetcode questions:
+
+| Question | Source |
+|----------|--------|
+| Write some code that lists the top 10 most frequent words in a file | [Glassdoor](https://www.glassdoor.com/Interview/Meta-Production-Engineer-Interview-Questions-EI_IE40772.0,4_KO5,24_IP2.htm?filter.jobTitleFTS=Production+Engineer) |
 
 
 ### Dinosour Question
