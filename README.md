@@ -635,6 +635,11 @@ def fn(head):
     return prev
 ```
 
+| Difficulty | Name | Description |
+|------------|------|-----------------------------------------------------------------|
+| Easy | 206. Reverse Linked List | Use two pointers to reverse the linked list. For each node, reverse the links. |
+| Medium | 237. Delete Node in a Linked List | Given the node to be deleted, copy the value of the next node to the current node and delete the next node. |
+
 ## Meta interview questions
 
 | Difficulty | Name | Source |
