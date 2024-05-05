@@ -526,6 +526,7 @@ Usually in matrix questions, we convert the question to a graph problem. Then we
 | Medium | 79. Word Search | Use DFS to traverse the matrix. For each cell, check if the word can be found starting from that cell. Can be optimized by marking current cell as visited.|
 | Medium | 200. Number of Islands | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Classic problem. |
 | Medium | 1992. Find All Groups of Farmland | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Or just use regular for loops to traverse matrix, this is faster. |
+| Medium | 529. Minesweeper | Given click position, you need to update the minesweeper board according the minesweeper rules. Return the board. We use of BFS/DFS to traverse adjacent cells. |
 
 ### Stack
 
