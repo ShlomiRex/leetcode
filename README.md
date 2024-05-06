@@ -640,6 +640,7 @@ def fn(head):
 |------------|------|-----------------------------------------------------------------|
 | Easy | 206. Reverse Linked List | Use two pointers to reverse the linked list. For each node, reverse the links. |
 | Medium | 237. Delete Node in a Linked List | Given the node to be deleted, copy the value of the next node to the current node and delete the next node. |
+| Medium      | 2487. Remove Nodes From Linked List | Either use right prefix pattern or use stack. |
 
 ## Meta interview questions
 
@@ -652,6 +653,7 @@ def fn(head):
 | Medium     | 15. 3Sum                                          | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
 | Medium     | 416. Partition Equal Subset Sum                   | [Glassdoor](https://www.glassdoor.com/Interview/network-engineer-interview-questions-SRCH_KO0,16.htm) |
 | Medium     | 529. Minesweeper                                  | [Glassdoor](https://www.glassdoor.com/Interview/Meta-Production-Engineer-Interview-Questions-EI_IE40772.0,4_KO5,24_IP2.htm?filter.jobTitleFTS=Production+Engineer) |
+| Easy       | 680. Valid Palindrome II                          | [Glassdoor](https://www.glassdoor.com/Interview/Meta-Production-Engineer-Interview-Questions-EI_IE40772.0,4_KO5,24_IP2.htm?filter.jobTitleFTS=Production+Engineer) |
 
 Non-leetcode questions:
 
