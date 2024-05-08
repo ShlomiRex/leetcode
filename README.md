@@ -124,6 +124,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | Name | Difficulty | Description |
 |------|------------|-------------|
 | 20. Valid Parentheses | Easy | Determine if a string that contains parentheses is valid: "[{()}]". The trick is to use stack. |
+| 2816. Double a Number Represented as a Linked List | Medium | First we reverse the linked list. We start from tail of linked list. We double every number and adding carry. Then we unreverse the loinked list. |
 | 141. Linked List Cycle | Easy | Find if linked list contains cycle by using fast and slow pointers. |
 | 206. Reverse Linked List | Easy | Reverse a linked list in place. Trick: use temporary pointer to the node that we change its links. |
 | 200. Number of Islands | Medium | Use DFS to traverse the matrix. For each cell, check if cell is land and mark it. Then call DFS on its neighbors. |
