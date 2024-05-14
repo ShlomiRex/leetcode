@@ -134,6 +134,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | 70. Climbing Stairs | Easy | It should be introduction to dynamic programming. The first dynamic programming question, because it teaches you a lot. |
 | 129. Sum Root to Leaf Numbers | Medium | Use DFS to traverse the tree. For each node, calculate the sum of the path from the root to the current node. |
 | 623. Add One Row to Tree | Medium | Use DFS to traverse the tree. For each node, check if the current level is equal to the target level. If it is, add the new nodes to the tree. |
+| 1219. Path with Maximum Gold | Medium | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
 
 ## Common Leetcode Patterns
 
@@ -377,6 +378,7 @@ Notice instead of appending to `curr_solution` we use deep copy, because `curr_s
 | Medium     | 78     | Subsets         | We can choose to add an element to be added to subset or not. I use index to tell what elements to add to the subset (all elements to the left of the index are already added). |
 | Medium     | 416    | Partition Equal Subset Sum   | We can choose to add an element to the subset or not. We store all the sums we have. For each num in nums, we add it to the possible sums. |
 | Medium     | 39     | Combination Sum              | We start with brute force decision tree. But we want to remove duplicates (order doesn't matter), so we choose index 'i' of candidates that we can choose from. This eliminates duplicates. |
+| Medium     | 1219   | Path with Maximum Gold       | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
 
 ### Sliding window
 
@@ -524,10 +526,11 @@ Usually in matrix questions, we convert the question to a graph problem. Then we
 
 | Difficulty | Name | Description |
 |------------|------|----------------------------------------------------------------|
-| Medium | 79. Word Search | Use DFS to traverse the matrix. For each cell, check if the word can be found starting from that cell. Can be optimized by marking current cell as visited.|
-| Medium | 200. Number of Islands | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Classic problem. |
-| Medium | 1992. Find All Groups of Farmland | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Or just use regular for loops to traverse matrix, this is faster. |
-| Medium | 529. Minesweeper | Given click position, you need to update the minesweeper board according the minesweeper rules. Return the board. We use of BFS/DFS to traverse adjacent cells. |
+| Medium | 79. Word Search                          | Use DFS to traverse the matrix. For each cell, check if the word can be found starting from that cell. Can be optimized by marking current cell as visited.|
+| Medium | 200. Number of Islands                   | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Classic problem. |
+| Medium | 1992. Find All Groups of Farmland        | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Or just use regular for loops to traverse matrix, this is faster. |
+| Medium | 529. Minesweeper                         | Given click position, you need to update the minesweeper board according the minesweeper rules. Return the board. We use of BFS/DFS to traverse adjacent cells. |
+| Medium | 1219. Path with Maximum Gold             | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
 
 ### Stack
 
