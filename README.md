@@ -531,6 +531,7 @@ Usually in matrix questions, we convert the question to a graph problem. Then we
 | Medium | 1992. Find All Groups of Farmland        | Use DFS to traverse the matrix. For each cell, check if the cell is land. If it is, mark it as visited and call DFS on its neighbors. Or just use regular for loops to traverse matrix, this is faster. |
 | Medium | 529. Minesweeper                         | Given click position, you need to update the minesweeper board according the minesweeper rules. Return the board. We use of BFS/DFS to traverse adjacent cells. |
 | Medium | 1219. Path with Maximum Gold             | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
+| Medium | 2812. Find the Safest Path in a Grid     | Very hard problem. We calculate distance matrix of thiefs cells, we want to find best safest path (maximize minimum distance to thiefs). We use BFS to calculate distance matrix. We also use max-heap. |
 
 ### Stack
 
