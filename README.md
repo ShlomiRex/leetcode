@@ -123,18 +123,19 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 
 | Name | Difficulty | Description |
 |------|------------|-------------|
-| 20. Valid Parentheses | Easy | Determine if a string that contains parentheses is valid: "[{()}]". The trick is to use stack. |
-| 2816. Double a Number Represented as a Linked List | Medium | First we reverse the linked list. We start from tail of linked list. We double every number and adding carry. Then we unreverse the loinked list. |
-| 141. Linked List Cycle | Easy | Find if linked list contains cycle by using fast and slow pointers. |
-| 206. Reverse Linked List | Easy | Reverse a linked list in place. Trick: use temporary pointer to the node that we change its links. |
-| 200. Number of Islands | Medium | Use DFS to traverse the matrix. For each cell, check if cell is land and mark it. Then call DFS on its neighbors. |
-| 62. Unique Paths | Medium | Use dynamic programming to solve the problem. The number of ways to reach a cell is the sum of the number of ways to reach the cell above and the cell to the left. |
-| 1249. Minimum Remove to Make Valid Parentheses | Medium | Use data structure of stack to keep track of open paranthesis. Similar to Leetcode 20. |
-| 416. Partition Equal Subset Sum | Medium | Use backtracking. For each number, we can choose to add it to the subset or not. We keep track of all possible sums and check if we found target. Meta love this question. |
-| 70. Climbing Stairs | Easy | It should be introduction to dynamic programming. The first dynamic programming question, because it teaches you a lot. |
-| 129. Sum Root to Leaf Numbers | Medium | Use DFS to traverse the tree. For each node, calculate the sum of the path from the root to the current node. |
-| 623. Add One Row to Tree | Medium | Use DFS to traverse the tree. For each node, check if the current level is equal to the target level. If it is, add the new nodes to the tree. |
-| 1219. Path with Maximum Gold | Medium | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
+| 20. Valid Parentheses                              | Easy     | Determine if a string that contains parentheses is valid: "[{()}]". The trick is to use stack. |
+| 2816. Double a Number Represented as a Linked List | Medium   | First we reverse the linked list. We start from tail of linked list. We double every number and adding carry. Then we unreverse the loinked list. |
+| 141. Linked List Cycle                             | Easy     | Find if linked list contains cycle by using fast and slow pointers. |
+| 206. Reverse Linked List                           | Easy     | Reverse a linked list in place. Trick: use temporary pointer to the node that we change its links. |
+| 200. Number of Islands                             | Medium   | Use DFS to traverse the matrix. For each cell, check if cell is land and mark it. Then call DFS on its neighbors. |
+| 62. Unique Paths                                   | Medium   | Use dynamic programming to solve the problem. The number of ways to reach a cell is the sum of the number of ways to reach the cell above and the cell to the left. |
+| 1249. Minimum Remove to Make Valid Parentheses     | Medium   | Use data structure of stack to keep track of open paranthesis. Similar to Leetcode 20. |
+| 416. Partition Equal Subset Sum                    | Medium   | Use backtracking. For each number, we can choose to add it to the subset or not. We keep track of all possible sums and check if we found target. Meta love this question. |
+| 70. Climbing Stairs                                | Easy     | It should be introduction to dynamic programming. The first dynamic programming question, because it teaches you a lot. |
+| 129. Sum Root to Leaf Numbers                      | Medium   | Use DFS to traverse the tree. For each node, calculate the sum of the path from the root to the current node. |
+| 623. Add One Row to Tree                           | Medium   | Use DFS to traverse the tree. For each node, check if the current level is equal to the target level. If it is, add the new nodes to the tree. |
+| 2331. Evaluate Boolean Binary Tree                 | Easy     | For each node, evaluate the expression based on the operator. If we have value 0 it means False, if value 1 it means True, if value 2 it means OR, if value 3 it means AND. |
+| 1219. Path with Maximum Gold                       | Medium   | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
 
 ## Common Leetcode Patterns
 
@@ -334,6 +335,7 @@ def fn(graph):
 | Easy       | 100. Same Tree                                | Use DFS to traverse the trees. For each node, check if the nodes are equal and exist. If they are, call DFS on their children. |
 | Easy       | 111. Minimum Depth of Binary Tree             | Use DFS and find the minimum depth of the tree. For each node, calculate the minimum depth of the left and right subtrees. |
 | Easy       | 226. Invert Binary Tree                       | Recursivly call `leftSubtree = invertTree(root.left)` and `rightSubtree = invertTree(root.right)` and swap: `root.left = rightSubtree` and `root.right = leftSubtree`. If root is None, return None. |
+| Easy       | 2331. Evaluate Boolean Binary Tree            | For each node, evaluate the expression based on the operator. If we have value 0 it means False, if value 1 it means True, if value 2 it means OR, if value 3 it means AND. |
 
 ### Backtracking
 
