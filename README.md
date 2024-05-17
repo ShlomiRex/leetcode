@@ -136,6 +136,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | 623. Add One Row to Tree                           | Medium   | Use DFS to traverse the tree. For each node, check if the current level is equal to the target level. If it is, add the new nodes to the tree. |
 | 2331. Evaluate Boolean Binary Tree                 | Easy     | For each node, evaluate the expression based on the operator. If we have value 0 it means False, if value 1 it means True, if value 2 it means OR, if value 3 it means AND. |
 | 1219. Path with Maximum Gold                       | Medium   | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
+| 1325. Delete Leaves With a Given Value             | Medium   | Use DFS to traverse the tree. For each node, check if the node is a leaf and has the given value. If it is, return None. |
 
 ## Common Leetcode Patterns
 
@@ -336,6 +337,7 @@ def fn(graph):
 | Easy       | 111. Minimum Depth of Binary Tree             | Use DFS and find the minimum depth of the tree. For each node, calculate the minimum depth of the left and right subtrees. |
 | Easy       | 226. Invert Binary Tree                       | Recursivly call `leftSubtree = invertTree(root.left)` and `rightSubtree = invertTree(root.right)` and swap: `root.left = rightSubtree` and `root.right = leftSubtree`. If root is None, return None. |
 | Easy       | 2331. Evaluate Boolean Binary Tree            | For each node, evaluate the expression based on the operator. If we have value 0 it means False, if value 1 it means True, if value 2 it means OR, if value 3 it means AND. |
+| Medium     | 1325. Delete Leaves With a Given Value        | Use DFS to traverse the tree. For each node, check if the node is a leaf and has the given value. If it is, return None. |
 
 ### Backtracking
 
