@@ -338,6 +338,7 @@ def fn(graph):
 | Easy       | 226. Invert Binary Tree                       | Recursivly call `leftSubtree = invertTree(root.left)` and `rightSubtree = invertTree(root.right)` and swap: `root.left = rightSubtree` and `root.right = leftSubtree`. If root is None, return None. |
 | Easy       | 2331. Evaluate Boolean Binary Tree            | For each node, evaluate the expression based on the operator. If we have value 0 it means False, if value 1 it means True, if value 2 it means OR, if value 3 it means AND. |
 | Medium     | 1325. Delete Leaves With a Given Value        | Use DFS to traverse the tree. For each node, check if the node is a leaf and has the given value. If it is, return None. |
+| Medium     | 979. Distribute Coins in Binary Tree          | Don't be fooled, it quite hard. Calculate number of spare coins (negative included) per edge of the tree, the answer is the sum of spare coins of all the edges. |
 
 ### Backtracking
 
