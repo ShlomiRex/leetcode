@@ -589,6 +589,7 @@ def fn(arr):
 | Difficulty | Name | Description |
 |------------|------|-----------------------------------------------------------------|
 | Medium | 1915. Number of Wonderful Substrings | Use prefix bitmasks XOR to calculate the XOR of the subarray. For each subarray, calculate the XOR of the subarray. If the XOR is a power of 2, increment the count. |
+| Hard   | 3068. Find the Maximum Sum of Node Values   | The main idea is `(a xor b) xor b = a`, the main observation is that we can xor ANY pair of nodes in the tree, not just directly connected nodes. We traverse deltas array in pairs to check benefit or no benefit of XORing numbers. |
 
 ### Heap/Priority Queue
 
