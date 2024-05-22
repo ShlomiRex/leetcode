@@ -384,6 +384,7 @@ Notice instead of appending to `curr_solution` we use deep copy, because `curr_s
 | Medium     | 416    | Partition Equal Subset Sum   | We can choose to add an element to the subset or not. We store all the sums we have. For each num in nums, we add it to the possible sums. |
 | Medium     | 39     | Combination Sum              | We start with brute force decision tree. But we want to remove duplicates (order doesn't matter), so we choose index 'i' of candidates that we can choose from. This eliminates duplicates. |
 | Medium     | 1219   | Path with Maximum Gold       | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
+| Medium     | 131    | Palindrome Partitioning      | We can choose to add a palindrome to the current partition or not. We use index to tell what elements to add to the partition. |
 
 ### Sliding window
 
