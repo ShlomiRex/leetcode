@@ -30,6 +30,7 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Bit manipulation](#bit-manipulation)
     - [Heap/Priority Queue](#heappriority-queue)
     - [Linked List](#linked-list)
+    - [Subsets](#subsets)
   - [Meta interview questions](#meta-interview-questions)
     - [Dinosour Question](#dinosour-question)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
@@ -654,6 +655,34 @@ def fn(head):
 | Easy | 206. Reverse Linked List | Use two pointers to reverse the linked list. For each node, reverse the links. |
 | Medium | 237. Delete Node in a Linked List | Given the node to be deleted, copy the value of the next node to the current node and delete the next node. |
 | Medium      | 2487. Remove Nodes From Linked List | Either use right prefix pattern or use stack. |
+
+### Subsets
+
+To return all subsets of given array `nums`:
+
+```python
+"""
+If nums == [2,4,6]
+Then the output will be: [[], [2], [2, 4], [2, 4, 6], [2, 6], [4], [4, 6], [6]]
+Runtime complexity: O(n * 2^n) > O(2^n)
+"""
+def subsets(nums):
+    result = []
+    def backtrack(start, path):
+        result.append(path)
+        for i in range(start, len(nums)):
+            backtrack(i + 1, path + [nums[i]])
+    
+    backtrack(0, [])
+    return res
+```
+
+Another pattern is to use counter 
+
+| Difficulty | Name | Description |
+|------------|------|-----------------------------------------------------------------|
+| Medium | 78. Subsets | Use backtracking to generate all possible subsets of the array. For each element, choose to add it to the subset or not. |
+| Medium | 2597. The Number of Beatiful Subsets | Use backtracking to generate all possible subsets of the array. For each subset, check if it is a beautiful subset. |
 
 ## Meta interview questions
 
