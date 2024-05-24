@@ -376,6 +376,31 @@ def backtrack(curr, OTHER_ARGUMENTS...):
     return ans
 ```
 
+Another example code:
+
+```python
+letters = ['a', 'b', 'c', 'd', 'a', 'b']
+words = [...]
+def backtrack(candidate_index, counter):
+    if candidate_index == n:
+        # do something with the current solution
+        return
+    
+    # Skip current candidate
+    best = backtrack(candidate_index + 1, counter)
+
+    # Take current candidate, only if valid
+    if VALID:
+        f = Counter(words[candidate_index])
+        counter -= f # Modify the counter after we choose current candidate word
+        best = max(best, backtrack(candidate_index + 1, counter))
+        counter += f # Restore the counter
+    
+    return best
+
+backtrack(0, Counter(letters))
+```
+
 Notice instead of appending to `curr_solution` we use deep copy, because `curr_solution` pointer can be accessed and modified multiple times. Its safer this way.
 
 | Difficulty | Number | Name                         | Main Idea                                                                                                                                                                                                                                                                                                                        |
@@ -386,6 +411,7 @@ Notice instead of appending to `curr_solution` we use deep copy, because `curr_s
 | Medium     | 39     | Combination Sum              | We start with brute force decision tree. But we want to remove duplicates (order doesn't matter), so we choose index 'i' of candidates that we can choose from. This eliminates duplicates. |
 | Medium     | 1219   | Path with Maximum Gold       | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
 | Medium     | 131    | Palindrome Partitioning      | We can choose to add a palindrome to the current partition or not. We use index to tell what elements to add to the partition. |
+| Hard       | 1255   | Maximum Score Words Formed by Letters | Regular backtracking, we keep track of count of letters that we can use. We check if we have enough letters (is valid), if so we include current candidate word. |
 
 ### Sliding window
 
