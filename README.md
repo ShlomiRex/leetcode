@@ -403,15 +403,15 @@ backtrack(0, Counter(letters))
 
 Notice instead of appending to `curr_solution` we use deep copy, because `curr_solution` pointer can be accessed and modified multiple times. Its safer this way.
 
-| Difficulty | Number | Name                         | Main Idea                                                                                                                                                                                                                                                                                                                        |
-|------------|--------|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Medium     | 22     | Generate Parentheses         | Its like a decision tree: each time we either add '(' or ')' such that the string matches valid parentheses. We use DFS to walk from top to bottom to the leafs, and add the leafs to the final solution. The solution is quite elegant, like 10 lines of code.|
-| Medium     | 78     | Subsets         | We can choose to add an element to be added to subset or not. I use index to tell what elements to add to the subset (all elements to the left of the index are already added). |
-| Medium     | 416    | Partition Equal Subset Sum   | We can choose to add an element to the subset or not. We store all the sums we have. For each num in nums, we add it to the possible sums. |
-| Medium     | 39     | Combination Sum              | We start with brute force decision tree. But we want to remove duplicates (order doesn't matter), so we choose index 'i' of candidates that we can choose from. This eliminates duplicates. |
-| Medium     | 1219   | Path with Maximum Gold       | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
-| Medium     | 131    | Palindrome Partitioning      | We can choose to add a palindrome to the current partition or not. We use index to tell what elements to add to the partition. |
-| Hard       | 1255   | Maximum Score Words Formed by Letters | Regular backtracking, we keep track of count of letters that we can use. We check if we have enough letters (is valid), if so we include current candidate word. |
+| Difficulty | Name | Main Idea  |
+|------------|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Medium     | 22. Generate Parentheses                       | Its like a decision tree: each time we either add '(' or ')' such that the string matches valid parentheses. We use DFS to walk from top to bottom to the leafs, and add the leafs to the final solution. The solution is quite elegant, like 10 lines of code.|
+| Medium     | 78. Subsets                                    | We can choose to add an element to be added to subset or not. I use index to tell what elements to add to the subset (all elements to the left of the index are already added). |
+| Medium     | 416. Partition Equal Subset Sum                | We can choose to add an element to the subset or not. We store all the sums we have. For each num in nums, we add it to the possible sums. |
+| Medium     | 39. Combination Sum                            | We start with brute force decision tree. But we want to remove duplicates (order doesn't matter), so we choose index 'i' of candidates that we can choose from. This eliminates duplicates. |
+| Medium     | 1219. Path with Maximum Gold                   | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
+| Medium     | 131. Palindrome Partitioning                   | We can choose to add a palindrome to the current partition or not. We use index to tell what elements to add to the partition. |
+| Hard       | 1255. Maximum Score Words Formed by Letters    | Regular backtracking, we keep track of count of letters that we can use. We check if we have enough letters (is valid), if so we include current candidate word. |
 
 ### Sliding window
 
