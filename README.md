@@ -412,6 +412,7 @@ Notice instead of appending to `curr_solution` we use deep copy, because `curr_s
 | Medium     | 1219. Path with Maximum Gold                   | We do backtrack on matrix: up,down,left,right we calculate current gold and we need to return maximum possible gold fom any path. So DFS on matrix. |
 | Medium     | 131. Palindrome Partitioning                   | We can choose to add a palindrome to the current partition or not. We use index to tell what elements to add to the partition. |
 | Hard       | 1255. Maximum Score Words Formed by Letters    | Regular backtracking, we keep track of count of letters that we can use. We check if we have enough letters (is valid), if so we include current candidate word. |
+| Hard       | 140. Word Break II                             | We can choose to add a word to the current sentence or not. We backtrack is current sentence doesn't match the desired string. |
 
 ### Sliding window
 
