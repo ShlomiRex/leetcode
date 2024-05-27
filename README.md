@@ -612,6 +612,7 @@ def fn(arr):
 |------------|------|-----------------------------------------------------------------|
 | Medium | 560. Subarray Sum Equals K | We take the brute force approach O(n^2) and optimize it. Use prefix sum to calculate the sum of the subarray. For each subarray, calculate the sum of the subarray. If the sum is equal to the target, increment the count. |
 | Medium | 1915. Number of Wonderful Substrings | Similar to prefix sum we have prefix bitmasks XOR. |
+| Easy   | 1608. Special Array With X Elements Greater Than or Equal X | Use prefix sum to calculate the number of elements greater than or equal to X. If the number of elements is equal to the element, return the element. Two key words: Count (frequencies), Prefix sum of frequencies |
 
 ### Bit manipulation
 
