@@ -476,6 +476,7 @@ def all_substrings(s):
 | Medium     | 2958. Length of Longest Subarray With at Most K Frequency        |                  |
 | Medium     | 2962. Count Subarrays Where Max Element Appears at Least K Times |                  |
 | Easy       | 121. Best Time to Buy and Sell Stock                             | Buy and sell stock problem. Use sliding window to find the minimum price and maximum profit. We don't increment left pointer, we set it to minimum price. |
+| Medium     | 1208. Get Equal Substrings Within Budget                         | Use sliding window to find the longest substring with at most maxCost. |
 
 ### Two pointers
 
