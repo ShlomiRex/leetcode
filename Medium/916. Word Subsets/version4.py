@@ -1,4 +1,7 @@
 """
+Time taken: 1:21:22
+Runtime complexity: O(len(words1) + len(words2) + len(words1) * len(words2)) = O(len(words1) * len(words2)
+
 The key point is instead of calculating freq dictionary for all subsets in words2, we calculate a single dictionary hashmap that will contain the maximum freq of all subsets in words2.
 
 This way we avoid iterating over all words2 frequencies, we only iterate through one.
