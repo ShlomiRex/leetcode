@@ -119,6 +119,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | Easy | 1. Two Sum | Use hashmap to remember if a specific number is present in the current array. Do calculation: `target - nums[i]` check if this exists in the hashmap / hashset / set. Time complexity: O(n) one pass. |
 | Easy | 206. Reverse Linked List | Use `prev`, `cur` pointers (sometimes I also use `next` pointer) to correctly point and change the linked list. |
 | Medium | 167. Two Sum II - Input array is sorted | Use two pointers, one at the beginning and one at the end. If the sum is greater than the target, move the right pointer to the left. If the sum is less than the target, move the left pointer to the right. |
+| Medium | 11. Container With Most Water | Use two pointers. Consider when to increase/decrease left/right pointers. |
 
 ## My favorite questions (by decending order)
 
@@ -532,6 +533,7 @@ def fn(arr1, arr2):
 | Easy     | 680. Valid Palindrome II | Use two pointers to check if the string is a palindrome. If the characters at the two pointers are not equal, check if the string is a palindrome by removing one of the characters. This is not quite easy. |
 | Medium   | 167. Two Sum II - Input array is sorted | Use two pointers, one at the beginning and one at the end. If the sum is greater than the target, move the right pointer to the left. If the sum is less than the target, move the left pointer to the right. |
 | Medium   | 15. 3Sum | Use two pointers to find the sum of three numbers that is equal to the target. Sort the array first. For each number, use two pointers to find the sum of the other two numbers. |
+| Medium | 11. Container With Most Water | Consider when to increase left pointer and when to decrease right pointer. |
 
 ### Binary search
 
