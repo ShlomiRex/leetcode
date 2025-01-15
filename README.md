@@ -113,6 +113,8 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 
 ## Must know questions before an interview
 
+Blind 75 is a must. Here are some of my questions that I did that I think should be learned before an interview:
+
 | Difficulty | Name | Description |
 |------------|------|-------------|
 | Medium | 215. Kth Largest Element in an Array | Can sort array and return `nums[len(nums)-k]` which is O(nlogn) or we can use max-heap (populate max-heap in O(1), then pop K roots, and the result is the k'th largest) |
@@ -120,6 +122,7 @@ The best way to solve leetcode is first to consider the brute force approach. Th
 | Easy | 206. Reverse Linked List | Use `prev`, `cur` pointers (sometimes I also use `next` pointer) to correctly point and change the linked list. |
 | Medium | 167. Two Sum II - Input array is sorted | Use two pointers, one at the beginning and one at the end. If the sum is greater than the target, move the right pointer to the left. If the sum is less than the target, move the left pointer to the right. |
 | Medium | 11. Container With Most Water | Use two pointers. Consider when to increase/decrease left/right pointers. |
+| Easy | 1768. Merge Strings Alternately | Traverse with a single array on two strings. Need to keep track of index and lengths of both strings. |
 
 ## My favorite questions (by decending order)
 
