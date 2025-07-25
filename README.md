@@ -33,6 +33,9 @@ The questions & solutions are also orginized in tables by pattern category.
     - [Subsets](#subsets)
   - [Meta interview questions](#meta-interview-questions)
     - [Dinosour Question](#dinosour-question)
+    - [Network Production Engineer Meta May 2024 - Coding Round - Q1](#network-production-engineer-meta-may-2024---coding-round---q1)
+    - [Network Production Engineer Meta May 2024 - Coding Round - Q2](#network-production-engineer-meta-may-2024---coding-round---q2)
+    - [Production Engineer Meta - Prep Material - Example Q1](#production-engineer-meta---prep-material---example-q1)
   - [Interview preparation tips from real Meta recruiter](#interview-preparation-tips-from-real-meta-recruiter)
 
 ## Interview stages cheat sheet
@@ -808,6 +811,204 @@ bipedal_dinosaurs.sort(key=lambda x: x[1], reverse=True)
 # Print names of bipedal dinosaurs from fastest to slowest
 for dinosaur in bipedal_dinosaurs:
     print(dinosaur[0])
+```
+
+### Network Production Engineer Meta May 2024 - Coding Round - Q1
+
+Write a function that returns True if a given string is polyndrome.
+Polyndrome is a string that is the same when reversed if you ignore punctuations and capitalization.
+Some examples of polyndromes / non-palyndromes are:
+
+```
+assert is_palindrome("Race car") == True
+assert is_palindrome("") == True
+assert is_palindrome(None) == True
+assert is_palindrome("ab") == False
+assert is_palindrome("aA") == True
+assert is_palindrome("!") == True
+assert is_palindrome("!!") == True # This is a case where most fail
+assert is_palindrome("!!!") == True
+```
+
+I did not write it down but they also expect exclamation marks to ignore ('!'), example: "!Ract car!" is a polnydrome. I also asked the questions: "are numbers count?" example: 6a6 or A6a is polyndrome. They said yes.
+
+My solution: I will do while loop with two-pointers and avoid characters that are not alpha-numerical. Runtime complexity: O(n)
+
+```python
+def is_palindrome(s: Optional[str]) -> bool:
+    if s is None or len(s) < 2:
+        return True
+
+    l, r = 0, len(s) - 1
+    while l <= r:
+        # isalnum checks for spaces!
+        while l < r and s[l].isalnum() == False:
+            l += 1
+        while r > l and s[r].isalnum() == False:
+            r -= 1
+
+        if s[l].lower() != s[r].lower():
+            return False
+
+        l += 1
+        r -= 1
+    return True
+```
+
+### Network Production Engineer Meta May 2024 - Coding Round - Q2
+
+We are going to write a CLI that passes a database of forune coockies (a text file) and print a random forune coockie to the screen (fortune coockie is just a string).
+
+In the STDIN line by line, fortune coockies are seperated by a new line and single precentage ('%') and a new line.
+
+Your task is to write a CLI that opens a file, parses it, extracts in some way the forunes, and prints out a random one to the screen.
+
+Example:
+
+```
+Hello world!
+%
+This is the second fortune coockie text.
+This is still the same fortune coockie.
+% 
+This is the next fortune coockie (String).
+How to implement a CLI that prints a RANDOM fortune coockie to the screen?
+```
+
+Questions to ask:
+
+* Do I know the size of the number of fortune coockies? Answer: it may be enourmesly large.
+
+Because I don't know the length of the number of fortunes, I need to parse the entire file and check for the amount of fortunes, and then select a random integer between 0 and `len(fortunes)` and then I'll parse the file again until I reach the fortune, and then I print it.
+
+This is two-pass approach. The interviewer saied its OK.
+
+So another question to ask is if its OK to use a hashmap to retrive the fortune in O(1). The interviwer said OK (one pass). Then I asked the interviewer if the fortune file contains '%' at the beginning (indicating starting of next forune). He said no. "We will assume the file starts with a legitimate version of the fortune".
+
+One pass solution:
+
+```python
+import random
+def getRandomFortune(file: str):
+    lst = []
+    fortune = ""
+    with open(file) as f:
+        for line in f:
+            if line == "%\n":
+                lst.append(fortune)
+                fortune = ""
+            else:
+                fortune += line
+    # Last fortune doesn't have '%' at the end to indicate end so we append it
+    lst.append(fortune)
+
+    fortunes_length = len(lst)
+    rand_fortune_index = random.randint(0, fortunes_length - 1) # randint includes the end point so we do minus 1
+    return lst[rand_fortune_index]
+```
+
+Now the interviewer asks: "what if we decided if the size of the file exceeds available OS RAM?"
+
+I said we do two-pass approach. First pass: count amount of fortunes. And then second pass I open the file again and read it until I reach the desired random fortune index.
+
+Then interviewer said OK lets do this. But can you think of a way to make the second read much, much faster?
+
+The interviewer helped me and hinted me about offsets in the file. I said I will count number of fortunes and also create list of offsets where each fortune 'i' starts.
+
+I asked help from the interviewer I dont know the syntax how to access offset in a file. `tell()` will tell the current position of the file pointer (offset), and `seek` will allow to change the position of the offset in the file (to read it later).
+
+My solution:
+
+```python
+def getRandomFortune(file: str):
+    offset_lst = [0] # First fortune always at 0
+    fortunes_length = 0
+
+    # Create offset table
+    with open(file, "r") as f:
+        line = f.readline()
+        while line:
+            if line == "%\n":
+                fortunes_length += 1
+                curr_offset = f.tell()
+                offset_lst.append(curr_offset)
+            line = f.readline()
+
+    # Last fortune has no '%\n' and we still need to count it
+    fortunes_length += 1
+
+    # Get in O(1) the random fortune
+    fortune = ""
+    rand_fortune_index = random.randint(0, fortunes_length - 1)  # randint includes the end point so we do minus 1
+    with open(file, "r") as f:
+        offset = offset_lst[rand_fortune_index]
+        f.seek(offset)
+        line = f.readline()
+        while line and line != "%\n":
+            fortune += line
+            line = f.readline()
+        return fortune
+```
+
+He likes my solution. He asked "do you have any questions for me?" I said: "yes, could you tell me more about your day-to-day tasks as production engineer? configurations? something interesting".
+
+
+### Production Engineer Meta - Prep Material - Example Q1
+
+A balanced partition is a split of an array into two parts (without reordering
+any elements) such that the sum of numbers before the split equals the sum of
+numbers after the split.
+You are given a file containing N arrays of integers, one array per line, where
+each array is represented as comma-separated integers.
+For each array in the file, if the array can be partitioned in a balanced way,
+return the balanced partitions.
+Example Input:
+```
+# file.txt
+1,2,3,4
+1,4,5
+Expected Output:
+[[1,4], [5]]
+```
+
+My solution:
+
+```python
+def balance_parition(arr: List[int]):
+    s = sum(arr)
+    if s % 2 != 0:
+        print(f"Can't parition array: {arr}")
+        return None
+
+    arr = sorted(arr) # O(n log n)
+    curr_sum = 0
+
+    left, right = [], []
+    can_partition = False
+
+    for i, n in enumerate(arr):
+        curr_sum += n
+        left.append(n)
+
+        if curr_sum == (s / 2):
+            # We reached middle
+            can_partition = True
+            right = arr[i+1:]
+            break
+    if can_partition:
+        return [left, right]
+    return None
+
+file = 'hello.txt'
+with open(file) as f:
+    for line in f:
+        line = line.strip()
+        if len(line) == 0:
+            print([])
+            continue
+        split = line.split(',')
+        arr = [int(x) for x in split]
+        print(balance_parition(arr))
 ```
 
 ## Interview preparation tips from real Meta recruiter
